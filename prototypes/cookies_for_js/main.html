@@ -1,0 +1,41 @@
+<!--
+    This file loads with different text depending on what the browser cookie contains
+-->
+
+<html>
+    <head>
+        <script>
+            function initialize() {
+                function changeStuff(info) {
+                    console.log(info)
+
+                    document.getElementById("pagename").innerText = info.pages[pagenum].pagename;
+                    document.getElementById("description").innerText = info.pages[pagenum].description;
+                }
+
+                let pagenum = localStorage.getItem("pagenum");
+                if(pagenum == null) return;
+
+                fetch("info.json").then(f => f.text()).then(i => changeStuff(JSON.parse(i)));
+            }
+            function pagechange() {
+                let pagenum = localStorage.getItem("pagenum");
+                pagenum = parseInt(pagenum) + 1;
+                if(isNaN(pagenum)) pagenum = 0;
+                localStorage.setItem("pagenum", pagenum);
+
+                location.reload()
+            }
+            function resetpagenum() {
+                localStorage.removeItem("pagenum")
+                location.reload()
+            }
+        </script>
+    </head>
+    <body onload="initialize()">
+        <h1>Page: <span id="pagename">Initial</span></h1>
+        <button onclick="pagechange()">Next Page</button>
+        <button onclick="resetpagenum()">Reset</button>
+        <p id="description"> This is random paragraph text, initial but loaded with information from a json </p>
+    </body>
+</html>
