@@ -1,0 +1,38 @@
+<!--
+    This file loads with different text depending on what the browser cookie contains
+-->
+
+<html>
+    <head>
+        <script>
+            async function checkvalid() {
+                let found = false, vPassws;
+                // Get the valid encrypted passwords
+                //// placeholder code (PC)
+                await fetch("passwords.txt").then(f=> i = f.text()).then(i => vPassws = i);
+                console.log(vPassws);
+                // Decrypt / encrypt upass and compare 
+                let uPass = localStorage.getItem("password");
+                /// check if upass is valid 
+                let vPass = vPassws;/* PC - for each pass in vPassws */
+                if (uPass == vPass) {
+                    found = true;
+                    /*break*/
+                }
+                    //loop ends here
+                if (found == true) {
+                    window.location.replace("main.html")
+                }
+                return [vPass, uPass];
+            }
+            function setPass(pass) {
+                console.log(pass)
+                localStorage.setItem("password", pass);
+                return checkvalid()
+            }
+        </script>
+    </head>
+    <body>
+        <input type="text" id="password_input" oninput="setPass(document.getElementById('password_input').value)">
+    </body>
+</html>
