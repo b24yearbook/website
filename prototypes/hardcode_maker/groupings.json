@@ -1,0 +1,20 @@
+{
+    "Grade Levels": [
+        {"Grade 7": [
+            "Diamond", "Emerald", "Garnet", "Jade", "Opal", "Ruby", "Sapphire", "Topaz"
+        ]},
+        {"Grade 8": [
+            "Adelfa", "Camia", "Champaca", "Dahlia", "Ilang Ilang", "Jasmin", "Rosal", "Sampaguita"
+        ]},
+        {"Grade 9": [
+            "Beryllium", "Cesium", "Lithium", "Magnesium", "Potassium", "Rubidium", "Sodium", "Strontium"
+        ]},
+        {"Grade 10": [
+            "Charm", "Electron", "Gluon", "Graviton", "Muon", "Photon", "Tau", "Truth"
+        ]},
+        {"SYP Silids": [
+            "A Santos", "Alcala", "Baltazar", "Banzon", "Cruz", "Del Mundo", "Del Rosario", "Fronda", 
+            "G Velasquez", "Gomez", "Juliano", "Ramirez", "Trono", "Velasco", "Vergara", "Zara"
+        ]}
+    ]
+}

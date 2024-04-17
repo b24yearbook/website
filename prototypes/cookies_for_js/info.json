@@ -1,8 +1,12 @@
-{
-    "pages" : [
-        {
-            "pagename" : "First Page",
-            "description" : "This is the first page of the website! I hope this worked"
-        }
-    ]
-}
+    {
+        "pages" : [
+            {
+                "pagename" : "First Page",
+                "description" : "This is the first page of the website! I hope this worked"
+            }, 
+            {
+                "pagename" : "Second Page",
+                "description" : "This is the second page of the website! I hope this worked"
+            }
+        ]
+    }
