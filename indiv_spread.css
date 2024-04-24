@@ -1,7 +1,49 @@
-.centerLeft {
-    border: 5px solid;
-    position: absolute;
-    top: 50%;
-    transform: translate(0, -50%);
-    padding: 10px;
-  }
+/*----------------------------------------- 
+  FOCUSED STYLESHEET FOR indiv_spread.css
+-------------------------------------------*/
+
+/* Style the container */
+.container {
+  display: flex;
+  align-items: center;  /* Align elements vertically in the center */
+  justify-content: center; /* Center elements horizontally */
+  width: 80%;  /* Adjust container width as needed */
+  margin: 0 auto; /* Center the container horizontally */
+  padding: 20px;
+  border: 1px solid #ddd; /* Optional: To visualize the container */
+}
+
+/* Style the arrow buttons */
+.arrow {
+  background-color: transparent;
+  border: none;
+  font-size: 2em; /* Adjust arrow size as needed */
+  cursor: pointer; /* Indicate clickable button */
+}
+
+.left {
+  /* Style the left arrow button specifically */
+  transform: rotate(180deg); /* Rotate the arrow left */
+}
+
+.right {
+  /* Style the right arrow button specifically */
+}
+
+/* Style the content area */
+.content {
+  display: flex; /* Enable flexbox for content elements */
+  align-items: center; /* Align image and text vertically */
+}
+
+/* Style the image container */
+.content img {
+  width: 30%; /* Adjust image width as needed */
+  margin-right: 20px; /* Add margin for spacing between image and text */
+}
+
+/* Style the text container */
+.text-container {
+  width: 60%; /* Adjust text container width as needed */
+  text-align: justify; /* Justify the text within the container */
+}

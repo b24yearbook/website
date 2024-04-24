@@ -28,11 +28,13 @@
             }
             function resetpagenum() {
                 localStorage.removeItem("pagenum")
+                localStorage.removeItem("password")
                 location.reload()
             }
         </script>
     </head>
     <body onload="initialize()">
+        <script src="password_validation.js"></script>
         <h1>Page: <span id="pagename">Initial</span></h1>
         <button onclick="pagechange()">Next Page</button>
         <button onclick="resetpagenum()">Reset</button>

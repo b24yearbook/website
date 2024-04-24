@@ -4,16 +4,22 @@
     center right is text with their full name, grade 11 and 12 block, their cores and electives, 
     and their yearbook quote. Also left and right arrow buttons on the left and right for navigating through the different indiv spread pages.
 -->
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <link rel="stylesheet" href="indiv_spread.css">
-</head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Layout Example</title>
+  <link rel="stylesheet" href="indiv_spread.css"> </head>
 <body>
-    <div id="navBar">
-        <!-- insert yearbook logo and preface for visitors -->
+  <div class="container">
+    <button class="arrow left">←</button>  <div class="image-container">
+      <img src="test.jpg" alt="Image description" width="500" height="666.5">
     </div>
-    <div id="gradPic" class="centerLeft" >
-        <img class="centerLeft" src="test.jpg" alt="Person pic">
+    <div class="text-container">
+      <h2>Stuff about person</h2>
+      <p>Hellogebob</p>
     </div>
+    <button class="arrow right">→</button>  </div>
 </body>
 </html>
