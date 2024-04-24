@@ -19,11 +19,17 @@
   border: none;
   font-size: 2em; /* Adjust arrow size as needed */
   cursor: pointer; /* Indicate clickable button */
+  padding: 100px;
+}
+
+.pic {
+  padding: 50px;
+  width: 500px;
+  height: 666.5px;
 }
 
 .left {
   /* Style the left arrow button specifically */
-  transform: rotate(180deg); /* Rotate the arrow left */
 }
 
 .right {
@@ -45,5 +51,14 @@
 /* Style the text container */
 .text-container {
   width: 60%; /* Adjust text container width as needed */
-  text-align: justify; /* Justify the text within the container */
+  text-align: center; /* Justify the text within the container */
+}
+.name {
+  text-decoration: underline;
+}
+.quote {
+  text-align: justify;
+}
+.author {
+  text-align: right;
 }
