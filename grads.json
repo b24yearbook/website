@@ -1,0 +1,24 @@
+{
+    "Comment": "This document is similar to grads_section.html. However, this file contains student info like urls to the student ",
+    "Comment2":"pictures, the writeups, quotes, etc.",
+    "Students" : {
+    "Student 1" : {
+        "Picture 1": "https://definitely.aurl/lookatthis.png", 
+        "Picture 2": "",
+        "Picture 3": "",
+        "Quote": "quote quote quote quote quote quote quote",
+        "Sections": ["Section 1", "Section 2", "Section 3", "Section 4", "Silid", "Section 5", "Section 6"],
+        "Writeups": [
+            "write write write write write write write write write write write write write"]
+        },
+    "Student 2" : {
+        "Picture 1": "https://definitely.aurl/lookatthis.png", 
+        "Picture 2": "",
+        "Picture 3": "",
+        "Quote": "2 quote quote quote quote quote quote quote",
+        "Sections": ["Section 1", "Section 2", "Section 3", "Section 4", "Silid", "Section 5", "Section 6"],
+        "Writeups": [
+            "2 write write write write write write write write write write write write write"]
+        }
+    }
+}

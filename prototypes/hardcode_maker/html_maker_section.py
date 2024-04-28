@@ -23,9 +23,11 @@ def makeSecElem(grade, section):
                   specialCase2[section] if section in specialCase2 else\
                   section
     secConnect = lowerConnect(section, False)
+    gradeConnect = lowerConnect(grade)
 
-    htmlFile.write(f'            <div id="{grade}{secConnect}" class="{grade}Section sectionCont" onclick=\'pageChange(\"{sectionShow}\")\'>\n')
-    htmlFile.write(f'                <img class="sectionIcon" src="{grade}{secConnect}.png" alt="{sectionShow} Icon">\n')
+    htmlFile.write(f'            <div id="{gradeConnect}{secConnect}" class="{gradeConnect}Section sectionCont"' +
+                                    f'onclick=\'pageChange("{sectionShow}", "{grade}")\'>\n')
+    htmlFile.write(f'                <img class="sectionIcon" src="{gradeConnect}{secConnect}.png" alt="{sectionShow} Icon">\n')
     htmlFile.write(f'                <p class="sectionName" id="{secConnect[0].lower()+secConnect[1:]}">{sectionShow}</p>\n')
     htmlFile.write( '            </div>\n')
     #"".join( grade.lower().split() ) + se
@@ -44,7 +46,7 @@ def makeGradeElem(gradeLevel):
     htmlFile.write(f'        <h2 class="gradeText">{gradeText}</h2>\n')
     htmlFile.write( '        <div class="sectionsCont">\n')
     for s in sections:
-        makeSecElem(lowerConnect(grade), s)
+        makeSecElem(grade, s)
     htmlFile.write( '        </div>\n')
     htmlFile.write( '    </div>\n')
 

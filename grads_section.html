@@ -1,6 +1,52 @@
 <html>
 <head>
+    <script>
+        function pageChange(name) {
+            localStorage.setItem("name", name);
+            window.location.href = "indiv_spread.html";
+        }
 
+        function lowerConnect(str, lower=true, joiner="") {
+            if(lower) return str.charAt(0).toLowerCase() + str.replace(/[,.-\s]/, "").slice(1);
+            else return str.replace(/[,.-\s]/, "");
+        }
+
+        let section = localStorage.getItem("section");
+        let grade = localStorage.getItem("grade");
+        let test;
+        async function changeStuff(info) {
+            let students = info[grade][section];
+            test = students;
+
+            let studentsDiv = document.getElementById("students");
+            
+            let grads = await fetch("grads.json").then(f => f.text()).then(i => JSON.parse(i)["Students"]);
+
+            console.log(grads)
+            students.forEach(s =>{
+                let sDiv = document.createElement("div");
+                sDiv.className = "student";
+                sDiv.id = lowerConnect(s);
+                sDiv.setAttribute("onclick", `pageChange("${s}")`);
+
+                let profile = document.createElement("img");
+                profile.className = "studentProfile";
+                try {image = grads[s]["Picture 1"]}
+                catch(err) {image = "error404.png"}
+                profile.src = image;
+
+                let name = document.createElement("p");
+                name.className = "studentName";
+                name.textContent = s;
+
+                sDiv.appendChild(profile); sDiv.appendChild(name);
+                studentsDiv.appendChild(sDiv);
+            })
+        }
+
+        fetch("grads_section.json").then(f => f.text()).then(i => changeStuff(JSON.parse(i)));
+    </script>
+    <link rel="stylesheet" href="grads_section.css"> 
 </head>
 <body>
     <div class="navBar">
@@ -24,13 +70,15 @@
             </div>
         </div>
     </div>
-    <div class="mainSection">
+    <div id="mainSection">
         <h1 id="sectionName"><img src="grade7Diamond.png">Diamond</h1> <!-- Could potentially put the other G7 Sections next to here-->
-        <div class="students">
+        <div id="students">
+            <!-- Placeholder Element
             <div class="student" id="Student Name">
                 <img class="studentProfile" src="Profile Pic">
                 <p class="studentName">Student Name</p>
             </div>
+            -->
         </div>
     </div>
 </body>
