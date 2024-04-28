@@ -62,3 +62,25 @@
 .author {
   text-align: right;
 }
+.hidden-content{
+  min-height: 100vh;
+  display: flex;
+  width: 80%;  /* Adjust container width as needed */
+  margin: 0 auto; /* Center the container horizontally */
+  padding: 20px;
+  border: 1px solid #ddd; /* Optional: To visualize the container */
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: all 2s ease;
+}
+.hidden-content-text-container{
+  width: 60%; /* Adjust text container width as needed */
+  text-align: center; /* Justify the text within the container */
+}
+
+
+.hidden-content.active{
+  transform: translateY(0px);
+  opacity: 1;
+}

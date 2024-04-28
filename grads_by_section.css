@@ -71,8 +71,7 @@
     pointer-events:all;
 }
 
-.divLink {
-    all: unset;
+.sectionCont {
     cursor: pointer;
 }
 
@@ -87,20 +86,6 @@
     border-top:1px solid rgb(220,220,220);
     width:100%;
     height:50vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-direction:column;
-}
-.innerSection {
-    border-top:1px solid rgb(220,220,220);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-direction:row;
-}
-.innerSection2 {
-    border-top:1px solid rgb(220,220,220);
     display:flex;
     justify-content:center;
     align-items:center;

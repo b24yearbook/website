@@ -11,8 +11,8 @@ grouping.close()
 
 htmlFile = open("html_file.html", "w")
 
-def lowerConnect(s, lower=True):
-    return "".join( (s.lower() if lower else s).split())
+def lowerConnect(s, lower=True, joiner=""):
+    return joiner.join( (s.lower() if lower else s).split())
 
 def makeSecElem(grade, section):
     #<div id="grade7Diamond" class="grade7Section sectionCont">
@@ -22,10 +22,11 @@ def makeSecElem(grade, section):
     sectionShow = specialCase1[section] if section in specialCase1 else\
                   specialCase2[section] if section in specialCase2 else\
                   section
-    
-    htmlFile.write(f'            <div id="{grade}{lowerConnect(section, False)}" class="{grade}Section sectionCont">\n')
-    htmlFile.write(f'                <img src="{grade}{lowerConnect(section, False)}.png">\n')
-    htmlFile.write(f'                <p class="sectionName" style="special_style">{sectionShow}</p>\n')
+    secConnect = lowerConnect(section, False)
+
+    htmlFile.write(f'            <div id="{grade}{secConnect}" class="{grade}Section sectionCont" onclick=\'pageChange(\"{sectionShow}\")\'>\n')
+    htmlFile.write(f'                <img class="sectionIcon" src="{grade}{secConnect}.png" alt="{sectionShow} Icon">\n')
+    htmlFile.write(f'                <p class="sectionName" id="{secConnect[0].lower()+secConnect[1:]}">{sectionShow}</p>\n')
     htmlFile.write( '            </div>\n')
     #"".join( grade.lower().split() ) + se
 def makeGradeElem(gradeLevel):
@@ -40,7 +41,7 @@ def makeGradeElem(gradeLevel):
     grade = grade if grade != "SYP Silids" else "SYP"
     
     htmlFile.write(f'    <div id="{lowerConnect(grade)}" class="gradeLevel">\n')
-    htmlFile.write(f'        <div class="gradeLevelCont"><h2 class="gradeText">{gradeText}</h2></div>\n')
+    htmlFile.write(f'        <h2 class="gradeText">{gradeText}</h2>\n')
     htmlFile.write( '        <div class="sectionsCont">\n')
     for s in sections:
         makeSecElem(lowerConnect(grade), s)
