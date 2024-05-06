@@ -7,13 +7,9 @@
 
 <html>
 <head>
-    <script>
-        function pageChange(section, grade) {
-            localStorage.setItem("section", section);
-            localStorage.setItem("grade", grade);
-            window.location.href = "grads_section.html";
-        }
-    </script>
+    <title>Graduates by Section - Luminare</title>
+    <script src="grads_by_section.js"></script>
+    <link rel="stylesheet" href="../../main.css">
     <link rel="stylesheet" href="grads_by_section.css"> 
 </head>
 <body>
@@ -38,7 +34,8 @@
             </div>
         </div>
     </div>
-    <div>
+
+    <div class="mainSection">
         <div id="grade7" class="gradeLevel">
             <h2 class="gradeText">Grade 7</h2>
             <div class="sectionsCont">
@@ -76,6 +73,7 @@
                 </div>
             </div>
         </div>
+
         <div id="grade8" class="gradeLevel">
             <h2 class="gradeText">Grade 8</h2>
             <div class="sectionsCont">
@@ -113,6 +111,7 @@
                 </div>
             </div>
         </div>
+
         <div id="grade9" class="gradeLevel">
             <h2 class="gradeText">Grade 9</h2>
             <div class="sectionsCont">
@@ -150,6 +149,7 @@
                 </div>
             </div>
         </div>
+
         <div id="grade10" class="gradeLevel">
             <h2 class="gradeText">Grade 10</h2>
             <div class="sectionsCont">
@@ -187,6 +187,7 @@
                 </div>
             </div>
         </div>
+
         <div id="syp" class="gradeLevel">
             <h2 class="gradeText">SYP Silids</h2>
             <div class="sectionsCont">
@@ -257,8 +258,5 @@
             </div>
         </div>
     </div>
-    
-    
-    
 </body>
 </html>

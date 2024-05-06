@@ -9,13 +9,52 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Page Layout Example</title>
+  <title>Individual Spreads - Luminare</title>
+  <link rel="stylesheet" href="../../main.css">
   <link rel="stylesheet" href="indiv_spread.css"> 
+  <script src="indiv_spread.js"></script>
 </head>
 <body>
-  <div class="container">
-    <button class="arrow">←</button>  <div class="image-container">
-      <img class="pic"src="test.jpg" alt="Image description">
+  <div class="navBar">
+      <div class="logo">luminare (placeholder)</div>
+      <div class="flex-spacer"></div>
+      <div class="navBar-hamburger-desktop">
+          <a>link1</a>
+          <a>link2</a>
+          <a>link3</a>
+          <a>link4</a>
+      </div>
+      <div class="navBar-hamburger-mobile">
+          <div class="navBar-hamburger-mobile-burger">
+              burger
+          </div>
+          <div class="navBar-hamburger-mobile-links">
+              <a>link1</a>
+              <a>link2</a>
+              <a>link3</a>
+              <a>link4</a>
+          </div>
+      </div>
+  </div>
+
+  <div class="mainSection">
+    <div class="container">
+      <button class="arrow">←</button>  
+      
+      <div class="image-container">
+        <img class="pic"src="test.jpg" alt="Image description">
+      </div>
+  
+      <div class="text-container">
+        <h2 class="name">Full name</h2>
+        <p>(grade 11 block) ☆ (grade 12 block)</p>
+        <p>(core) ☆ (elective/s)</p>
+        <h2 class="quote">“yb quote yb quote yb quote yb quote yb quote yb quote yb quote yb quote yb quote yb quote yb quote yb quote yb quote yb quote yb quote yb quote yb quote yb quote yb quote yb quote yb quote yb quote yb quote yb quote yb quote yb quote yb quote yb quote ”</h2>
+        <br><br>
+        <h3 class="author">- author of quote</h3>
+      </div>
+      
+      <button class="arrow">→</button>  
     </div>
     <div class="text-container">
       <h2 class="name">Full name</h2>
@@ -32,22 +71,6 @@
         <p>"write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up write up "</p>
       </div>
     </div>
-    <script type="text/javascript">
-      window.addEventListener('scroll', reveal);
-      function reveal(){
-        var reveals = document.querySelectorAll('.hidden-content');
-        for(var i = 0; i < reveals.length; i++){
-          var windowheight = window.innerHeight;
-          var revealtop = reveals[i].getBoundingClientRect().top;
-          var revealpoint = 150;
-          if(revealtop < windowheight - revealpoint){
-            reveals[i].classList.add('active');
-          }
-          else{
-            reveals[i].classList.remove('active');
-          }
-        }
-      }
-    </script>
+  </div>
 </body>
 </html>

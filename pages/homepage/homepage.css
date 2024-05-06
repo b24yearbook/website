@@ -1,0 +1,9 @@
+/*--------------------------------- 
+ FOCUSED STYLESHEET FOR homepage.html
+---------------------------------*/
+.section.preface {
+    align-items:baseline;
+}
+.prefaceText {
+    max-width:70%;
+}
