@@ -3,7 +3,7 @@ Official site of the PSHS-MC 2024 Yearbook.
 
 ## Developer's Notes:
 - Use snake case for file naming, camel case for the actual programs. Or, discuss if we should do only camel case/only snake case.
-- 
+- Always check [WEBSITE SPREADSHEET / PSEU-WHITEBOARD](<https://docs.google.com/spreadsheets/d/15CqxZokV28Gtr6xROZcEN1DDmZWcwRz04KROE5VyMsQ/edit?usp=sharing>)!
 
 ## Minimum Required:
 - Login Page fs

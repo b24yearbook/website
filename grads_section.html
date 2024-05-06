@@ -7,14 +7,16 @@
         }
 
         function lowerConnect(str, lower=true, joiner="") {
-            if(lower) return str.charAt(0).toLowerCase() + str.replace(/[,.-\s]/, "").slice(1);
-            else return str.replace(/[,.-\s]/, "");
+            if(lower) return str.charAt(0).toLowerCase() + str.replaceAll(/[,.-\s]/g, "").slice(1);
+            else return str.replaceAll(/[,.-\s]/g, "");
         }
 
         let section = localStorage.getItem("section");
         let grade = localStorage.getItem("grade");
         let test;
         async function changeStuff(info) {
+            gradeId = grade != "SYP" ? lowerConnect(grade) : "syp";
+            document.getElementById("sectionName").innerHTML = `<img src="${gradeId}${lowerConnect(section, false)}.png">${section}`;
             let students = info[grade][section];
             test = students;
 
