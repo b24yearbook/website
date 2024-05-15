@@ -7,3 +7,17 @@
 .prefaceText {
     max-width:70%;
 }
+.landingHeader {
+    position:absolute;
+    top:30%;
+    left:10%;
+}
+.placeholderBlobby {
+    width:1500px;
+    height:750px;
+    background-image:url("./temp/made\ in\ china\ luminare.png");
+    background-size:contain;
+    position:absolute;
+    top:20%;
+    left:30%;
+}
