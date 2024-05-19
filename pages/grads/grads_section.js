@@ -1,6 +1,6 @@
 function pageChange(name) {
     localStorage.setItem("name", name);
-    window.location.href = "indiv_spread.html";
+    window.location.href = "../indiv_spread/indiv_spread.html";
 }
 
 function lowerConnect(str, lower=true, joiner="") {
