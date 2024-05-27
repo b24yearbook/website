@@ -1,24 +1,48 @@
 {
     "Comment": "This document is similar to grads_section.html. However, this file contains student info like urls to the student ",
     "Comment2":"pictures, the writeups, quotes, etc.",
-    "Students" : {
-    "Student 1" : {
-        "Picture 1": "https://definitely.aurl/lookatthis.png", 
-        "Picture 2": "",
-        "Picture 3": "",
+    "00008881705" : {
+        "Name": "BEREBER, Paris Miguel U.",
+        "Stylized Name": "../../temp_assets/student1/student1StyledName.png",
+        "Toga Pic": "../../temp_assets/student1/student_1_picture_2.png", 
+        "Sablay Pic": "../../temp_assets/student1/student_1_picture_1.png",
+        "Formal Pic": "../../temp_assets/student1/student_1_picture_3.png",
+        "Creative Pic": "../../temp_assets/student1/student_1_picture_4.png",
         "Quote": "quote quote quote quote quote quote quote",
-        "Sections": ["Section 1", "Section 2", "Section 3", "Section 4", "Silid", "Section 5", "Section 6"],
+        "Extracurriculars": [],
+        "Constellations": [],
+        "Writers": ["Rye"],
         "Writeups": [
             "write write write write write write write write write write write write write"]
         },
-    "Student 2" : {
-        "Picture 1": "https://definitely.aurl/lookatthis.png", 
-        "Picture 2": "",
-        "Picture 3": "",
-        "Quote": "2 quote quote quote quote quote quote quote",
-        "Sections": ["Section 1", "Section 2", "Section 3", "Section 4", "Silid", "Section 5", "Section 6"],
+    "00100887016" : {
+        "Name": "LIBATIQUE, Lance C.",
+        "Stylized Name": "Lance",
+        "Toga Pic": "../indiv_spread/temp/LANCE_TOGA.jpg", 
+        "Sablay Pic": "../indiv_spread/temp/LANCE_BARONG.jpg",
+        "Formal Pic": "../indiv_spread/temp/LANCE_SEMIFORMAL.jpg",
+        "Creative Pig": "../indiv_spread/temp/LANCE_CREATIVE.jpg",
+        "Quote": "\"This quote is extremely cool. Woahhhh\" - Meee",
+        "Extracurriculars": ["Tulog Club Member", "Kain Club Secretary", "Cramming Club Vice President"],
+        "Constellations" : ["Corvus", "Butterflius", "Constellation"],
+        "Writers": ["Writer Name", "Writer Name"],
         "Writeups": [
-            "2 write write write write write write write write write write write write write"]
-        }
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n\nSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur.",
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n\nSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur."]
+        },
+    "00206221707" : {
+        "Name": "ANORAN, Reuben Ryan, DV.",
+        "Stylized Name": "Rye",
+        "Toga Pic": "https://drive.google.com/thumbnail?sz=h1024&id=17G9i1nGWAgQbvyrsH9H7I0SXNkFPYGjd", 
+        "Sablay Pic": "https://drive.google.com/thumbnail?sz=h1024&id=1iT9STB1wVXpI5MxJwlmnPoVWP6tYO8tQ",
+        "Formal Pic": "https://drive.google.com/thumbnail?sz=h1024&id=1s0e-M382pEFJVFs_i65OzEmp6n33NaYs",
+        "Creative Pig": "https://drive.google.com/thumbnail?sz=h1024&id=10pTge5WvimK9cXdadGOldCD6jwHY2-I_",
+        "Quote": "\"They would rather be moved into a cursed, wrong, uncomfortable shape, than suffer the quiet violence of being untouched and abandoned\" - Vihart",
+        "Extracurriculars": ["Canadian Computing Competition, 2023", "AstroSoc, 2021-2024", "Academic Committee, 2021-2023"],
+        "Constellations" : ["Vulpecula", "Telescopium", "Norma"],
+        "Writers": ["Writer Name"],
+        "Writeups": [
+            "We would not be the people we are today without Ben. We argue a lot, but he's spoiled us, really. He can be annoying sometimes but in a clowning, big brother way. He can disappear for days on end, but we’re glad he takes time to take care of himself. We tend to be selfish when dealing with Ben, but it's because we trust him to the point we show our worst sides. There's no one else who has understood us as he did. All these years, since the first day of seventh grade, he knew our worst and best moments and the emotions we felt through all of them. However, he's not only the best sibling we could ever ask for but also one of the best people in this world. Though some things concern me, his lack of an attention span, his absolute sabog and out of context quotes, his periods of mindlessly scribbling in his journal to untangle his thoughts, and his love of the stars and the night sky, are all so lovable. It’s great how much he cares for his family and friends even when things get complicated and heavy, such as giving his thoughtful little gifts or the way he slumps into our arms for a hug when he's had a tiring day. It makes you want to cheer him on when he attempts not to stress out over things out of his control and keeps on trying despite the “brainworms.” It’s endearing how much effort he puts into the subjects he loves and how he has no qualms sacrificing his grades in other ones; it is worrying, but priorities that make him happy are admirable. We hope in his life that he’ll always keep making his silly Halloween costumes and Tech standee shoes. He’s grown so much, and while sometimes we miss the cute old him, we’re thankful for his (not really) responsible current self. We hope to see him achieve all of his dreams. By the way, he’s a nerd, but we love him!"]
     }
+    
 }

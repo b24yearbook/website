@@ -1,0 +1,14 @@
+contains a list of students, each accessible with their unique student id.
+
+the student id is composed of 11 numbers:
+AAA BCD EFG HH
+AAA is the student's number in the alphabetical list
+B-G are the student's sections from grade 7 to grade 12
+HH is a two digit representation of their silid
+Note: this is 0-indexed.
+
+google drive images must be formatted as follows:
+    https://drive.google.com/thumbnail?sz=h1024&id<comes from file id>
+
+    to get the file id, take the long string between "/file/d/" and "/view?usp=sharing"
+    https://drive.google.com      /file/d/        17G9i1nGWAgQbvyrsH9H7I0SXNkFPYGjd       /preview

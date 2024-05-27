@@ -21,13 +21,13 @@ def makeSecElem(grade, section):
     #</div>
     sectionShow = specialCase1[section] if section in specialCase1 else\
                   specialCase2[section] if section in specialCase2 else\
-                  section
+                  f"Block {section}" if len(section) == 1 else\
+                  section 
     secConnect = lowerConnect(section, False)
     gradeConnect = lowerConnect(grade)
 
-    htmlFile.write(f'            <div id="{gradeConnect}{secConnect}" class="{gradeConnect}Section sectionCont"' +
-                                    f'onclick=\'pageChange("{sectionShow}", "{grade}")\'>\n')
-    htmlFile.write(f'                <img class="sectionIcon" src="{gradeConnect}{secConnect}.png" alt="{sectionShow} Icon">\n')
+    htmlFile.write(f'            <a href="grads_section.html#{grade.split()[1]}{secConnect}" onclick=\'pageChange("{sectionShow if len(section) > 1 else section}", "{grade}")\'><div id="{gradeConnect}{secConnect}" class="{gradeConnect}Section sectionCont">\n')
+    htmlFile.write(f'                <img class="sectionIcon" src="../../resources/img/icons/{grade.replace(" ", "%20")}/{sectionShow if len(section) > 1 else section}.png" alt="{sectionShow} Icon">\n')
     htmlFile.write(f'                <p class="sectionName" id="{grade.split()[1]}{secConnect}">{sectionShow}</p>\n')
     htmlFile.write( '            </div>\n')
     #"".join( grade.lower().split() ) + se

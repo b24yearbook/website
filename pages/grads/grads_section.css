@@ -1,0 +1,7 @@
+.sectionIcon {
+    height: 1em;
+    margin-right: 25px;
+}
+.sectionIcon.small {
+    height: 0.5em;
+}
