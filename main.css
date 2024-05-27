@@ -15,13 +15,23 @@
     --c-accent-f-2:rgba(255, 0, 21,0.6);
     --c-accent-f-3:rgba(15, 36, 231,0.9);
     --c-accent-f-4:rgba(0, 182, 121,1);
+    /*Fainter accent colors*/
+    --c-accent-ff-1:rgba(255, 174, 0,0.5);
+    /*Nice colors*/
+    --c-1:#FCF5D4;
+    --c-2:#E665A4;
+    --c-3:#EA9648;
+    --c-4:#E7C145;
+    --c-5:#A8E540;
+    --c-6:#A4F3E0;
 }
 
 /* -------------- GENERAL STYLES ---------------- */
 body {
     margin:0;
     font-size:20px;
-    background-image:linear-gradient(#452057 0%, #190C35 33%, #452057 66%, #190C35 100%)
+    background-image:linear-gradient(#452057 0%, #190C35 33%, #452057 66%, #190C35 100%);
+    overflow-x:hidden;
 }
 .hidden {
     display:none;
@@ -31,6 +41,7 @@ h1 {
     font-weight:800;
     font-size:3em;
     color:var(--c-header);
+    margin-bottom:5px;
 }
 h2, h3, h4, h5, h6 {
     font-family:"Montserrat", sans-serif;
@@ -43,6 +54,12 @@ p, button, span {
     font-weight:400;
     font-size:1em;
     color:var(--c-paragraph);
+}
+a {
+    font-family:"Avenir", "Sen", sans-serif;
+    font-weight:400;
+    font-size:1em;
+    text-decoration:none;
 }
 .header-font {
     font-family:"Montserrat", sans-serif;
@@ -59,7 +76,7 @@ p, button, span {
 
 
 /* -------------- NAVBAR STYLING ---------------- */
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 700px) {
     body .navBar-hamburger-desktop {
         display:none;
     }
@@ -70,16 +87,45 @@ p, button, span {
 .mainSection {
     padding-top:40px;
 }
+.logo {
+    font-family:"Gotham", "Figtree", sans-serif;
+    font-weight:800;
+    font-size:3em;
+    font-size:27px;
+    font-weight:bold;
+    margin-left:7px;
+    margin-top:3px;
+}
 .navBar {
     width:100%;
-    height:40px;
+    height:50px;
     position:fixed;
     top:0;
     left:0;
     right:0;
     display:flex;
     justify-content:center;
-    background-color:var(--c-accent1);
+    z-index:1000;
+}
+.navBar::before {
+    content:"";
+    display:block;
+    position:absolute;
+    left:0;
+    top:0;
+    z-index:-1;
+    background-image:linear-gradient(30deg,
+        var(--c-1) 15%, 
+        var(--c-2) 30%, 
+        var(--c-3) 45%, 
+        var(--c-4) 60%, 
+        var(--c-5) 75%, 
+        var(--c-6) 90%,
+        var(--c-1) 100%
+    );
+    mask-image:linear-gradient(0deg, transparent 0%, black 20%);
+    width:100%;
+    height:100%;
 }
 .navBar .logo {
     /* Put in URL of Luminare logo as bg-image :) */
@@ -101,8 +147,9 @@ p, button, span {
 .navBar-hamburger-desktop a, .navBar-hamburger-mobile a {
     padding:10px 20px;
 }
-.navBar-hamburger-desktop a:hover, .navBar-hamburger-mobile a:hover {
-    background-color:red;
+.navBar-hamburger-desktop a:hover, .navBar-hamburger-mobile a:hover, a.selected {
+    background-color:black;
+    color:white;
 }
 .navBar-hamburger-mobile-burger {
     width:40px;
@@ -119,11 +166,23 @@ p, button, span {
     display:flex;
     align-items:center;
     flex-direction:column;
-    width:100px;
-    transform:translatex(-60px);
+    width:200px;
+    transform:translatex(-150px);
     opacity:0;
     pointer-events:none;
-    background-color:var(--c-accent1);
+    background-image:linear-gradient(30deg,
+        var(--c-1) 15%, 
+        var(--c-2) 30%, 
+        var(--c-3) 45%, 
+        var(--c-4) 60%, 
+        var(--c-5) 75%, 
+        var(--c-6) 90%,
+        var(--c-1) 100%
+    );
+    background-size:300%;
+    background-position:right;
+    padding-bottom:10px;
+    mask-image:linear-gradient(0deg, transparent 0%, black 5%);
 }
 .navBar-hamburger-mobile:hover .navBar-hamburger-mobile-links {
     opacity:1;
