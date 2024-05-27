@@ -10,7 +10,7 @@
   position:relative;
 }
 .starsBg {
-  background-image:url(../../resources/img/PLACEHOLDER_STARS.png);
+  background-image:url(../../resources/img/stars.png);
   background-size:30%;
   top:0;
   bottom:0;
