@@ -1,0 +1,9 @@
+.sectionsCont {
+    display: flex;
+}
+.sectionCont {
+    width: 128px;
+}
+.sectionIcon {
+    aspect-ratio: 1 / 1;
+}
