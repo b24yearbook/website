@@ -12,9 +12,11 @@
         {"Grade 10": [
             "Charm", "Electron", "Gluon", "Graviton", "Muon", "Photon", "Tau", "Truth"
         ]},
-        {"SYP Silids": [
-            "A Santos", "Alcala", "Baltazar", "Banzon", "Cruz", "Del Mundo", "Del Rosario", "Fronda", 
-            "G Velasquez", "Gomez", "Juliano", "Ramirez", "Trono", "Velasco", "Vergara", "Zara"
+        {"Grade 11": [
+            "A", "B", "C", "D", "E", "F", "G", "H"
+        ]},
+        {"Grade 12": [
+            "A", "B", "C", "D", "E", "F", "G", "H"
         ]}
     ]
 }

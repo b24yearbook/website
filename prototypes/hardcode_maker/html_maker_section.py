@@ -28,7 +28,7 @@ def makeSecElem(grade, section):
     htmlFile.write(f'            <div id="{gradeConnect}{secConnect}" class="{gradeConnect}Section sectionCont"' +
                                     f'onclick=\'pageChange("{sectionShow}", "{grade}")\'>\n')
     htmlFile.write(f'                <img class="sectionIcon" src="{gradeConnect}{secConnect}.png" alt="{sectionShow} Icon">\n')
-    htmlFile.write(f'                <p class="sectionName" id="{secConnect[0].lower()+secConnect[1:]}">{sectionShow}</p>\n')
+    htmlFile.write(f'                <p class="sectionName" id="{grade.split()[1]}{secConnect}">{sectionShow}</p>\n')
     htmlFile.write( '            </div>\n')
     #"".join( grade.lower().split() ) + se
 def makeGradeElem(gradeLevel):
