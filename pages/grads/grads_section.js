@@ -43,6 +43,7 @@ async function changeStuff(info) { // changes the html contents with student inf
     // Filters out any incorrect links
     try{var students = info[grade][section]; test = info;}
     catch(err){
+        console.log(err)
         // If fail, go to backup
         try{
             [section, grade] = loadBackup();
@@ -101,7 +102,7 @@ async function changeStuff(info) { // changes the html contents with student inf
         name.className = "studentName";
         console.log(s);
         // placeholder is for debug
-        name.textContent = s != "Placeholder" ? grads[s]["Name"] : `Student ${counter}`;
+        name.textContent = s != "Placeholder" ? grads[s]["Name"].split(",")[0] : `Student ${counter}`;
 
         sDiv.appendChild(profile); sDiv.appendChild(name); aWrap.appendChild(sDiv);
         studentsDiv.appendChild(aWrap);
