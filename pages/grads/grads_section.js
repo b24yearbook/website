@@ -41,13 +41,14 @@ var test;
 async function changeStuff(info) { // changes the html contents with student info
     // Initially, check if the grade and section is available in the json
     // Filters out any incorrect links
-    try{var students = info[grade][section]; test = info;}
+    try{var students = info[grade][section]; students[0];}
     catch(err){
         console.log(err)
         // If fail, go to backup
         try{
             [section, grade] = loadBackup();
             var students = info[grade][section]; test = info;
+            students[0];
         }
         catch(err) { //If still fails, send user back
             var prevPage = window.location.href;
