@@ -66,7 +66,7 @@ async function changeStuff(info) {
   console.log(info);
   // Check if id exists by finding the student connected to id
   var student;
-  try {student = info[id]; }
+  try {student = info[id]; student["Name"];}
   catch(err) {//If not, check for backup
     try{student = info[loadBackup()];}
     catch(err) {pageLoadFail();}
