@@ -28,27 +28,15 @@
 .imageMain {
   width:300px;
   aspect-ratio:3/4;
-  border-radius:500px 500px 0 0;
+  border-radius:10px;
 }
 .imageSeries {
   width:300px;
   aspect-ratio:3/5;
 }
-.imageMain.barong {
-  background-image:url("temp/LANCE_BARONG.jpg");
-}
 .imageSeriesContainer {
   display:flex;
   flex-wrap:wrap;
-}
-.imageSeries.creative {
-  background-image:url("temp/LANCE_CREATIVE.jpg");
-}
-.imageSeries.semiformal {
-  background-image:url("temp/LANCE_SEMIFORMAL.jpg");
-}
-.imageSeries.toga {
-  background-image:url("temp/LANCE_TOGA.jpg");
 }
 .nameHeader {
   text-shadow:-5px 5px 0 var(--c-accent-ff-1);
@@ -156,40 +144,46 @@
   flex-wrap:wrap;
 }
 
-.gallery-wrapper{
-  position:relative;
-  max-width: 48rem;
-  margin: 0 auto;
+.image-card{
+  border-radius: 1vmin;
+  width:300px;
+  position:absolute;
+  aspect-ratio:3/4;
+  transition: transform 800ms cubic-bezier(.05, .43, .25, .95);
+  background-color: rgba(0, 0, 0, 0);
+
 }
 
-.gallery{
-  display:flex;
-  overflow-x: hidden;
-  aspect-ratio: 3 / 4;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
+.image-card:nth-child(1){
+  transform: translateX(-10%);
 }
-.gallery img{
-  flex: 1 0 100%;
-  object-fit: cover;
+
+.image-card:nth-child(2){
+  background-image:url(temp/LANCE_BARONG.jpg);
 }
-.gallery-nav{
-  display:flex;
-  column-gap: 1rem;
-  position: absolute;
-  bottom: 1.25rem;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1;
+
+.image-card:nth-child(3){
+  transform: translateX(10%);
 }
-.gallery-nav a{
-  width: 0.5rem;
-  height: 0.5rem;
-  border-radius: 50%;
-  background-color: #fff;
-  opacity: 0.75;
-  transition: opacity ease 250ms;
+
+.image-card:nth-child(4){
+  transform: translateX(20%);
 }
-.gallery-nav a:hover{
-  opacity: 1;
+.card-group:hover > .image-card:nth-child(1){
+  transform: translate(-40%);
 }
+.card-group:hover > .image-card:nth-child(2){
+  transform: translate(-15%);
+}
+
+.card-group:hover > .image-card:nth-child(3){
+  transform: translate(15%);
+}
+
+.card-group:hover > .image-card:nth-child(4){
+  transform: translate(40%);
+}
+.studentInfo{
+  margin-top: 435px;
+}
+
