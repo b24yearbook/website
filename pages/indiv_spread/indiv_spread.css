@@ -151,11 +151,12 @@
   aspect-ratio:3/4;
   transition: transform 800ms cubic-bezier(.05, .43, .25, .95);
   background-color: rgba(0, 0, 0, 0);
-
+  background-size: cover;
 }
 
 .image-card:nth-child(1){
-  transform: translateX(-10%);
+  transform: translateX(-10%) rotate(-3deg);
+  background-image:url(temp/LANCE_CREATIVE.jpg);
 }
 
 .image-card:nth-child(2){
@@ -163,26 +164,29 @@
 }
 
 .image-card:nth-child(3){
-  transform: translateX(10%);
+  transform: translateX(10%) rotate(3deg);
+  background-image:url(temp/LANCE_SEMIFORMAL.jpg);
 }
 
 .image-card:nth-child(4){
-  transform: translateX(20%);
+  transform: translateX(20%) rotate(5deg);
+  background-image:url(temp/LANCE_TOGA.jpg);
 }
 .card-group:hover > .image-card:nth-child(1){
-  transform: translate(-40%);
+  transform: translateX(-70%) translateY(15%) rotate(-20deg);
 }
 .card-group:hover > .image-card:nth-child(2){
-  transform: translate(-15%);
+  transform: translate(-25%) translateY(5%) rotate(-8deg);
 }
 
 .card-group:hover > .image-card:nth-child(3){
-  transform: translate(15%);
+  transform: translate(25%) translateY(5%) rotate(8deg);
 }
 
 .card-group:hover > .image-card:nth-child(4){
-  transform: translate(40%);
+  transform: translate(70%) translateY(15%) rotate(20deg);
 }
+
 .studentInfo{
   margin-top: 435px;
 }
