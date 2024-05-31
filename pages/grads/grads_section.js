@@ -10,11 +10,15 @@ function pageChange(stdNo) {
     window.location.href = `../indiv_spread/indiv_spread.html#${stdNo}`;
 }
 
-// Function run if the siteId is invalid, checks for what the last valid url was
-// Technically the user could edit their localstorage... but like, why would they?
-// If ever that happens, see exception statements in function changeStuff
+// Functions related to backup data for clean user experience
+// If the website is accessed purely on links on it, unnecessary
+// But I'm a url inputter who types my urls so 🤷‍♀️ here we are
 function loadBackup() {
     return [localStorage.getItem("section"), localStorage.getItem("grade")];
+}
+function setBackup(section, grade) {
+    localStorage.setItem("section", section);
+    localStorage.setItem("grade", grade);
 }
 
 ///////////////////////////
@@ -22,39 +26,31 @@ function loadBackup() {
 
 // Get site ID to show the user what they want
 url = window.location.href.split("#")
-siteId = url.length > 1 ? url[1] : -1;
-if (siteId == -1) { // If the site ID doesn't contain an identifier (#), check backup
-    let backup = loadBackup();
-    var section = backup[0]; 
-    var grade = backup[1];
-}
-else { // Otherwise continue as normal. Assumes siteId is of form AaBB..., 
-       // where A is a number from 7 to 12, BB... is the section
-    var section = siteId[0] == "1"? siteId.slice(2) : siteId.slice(1);
-    var grade = `Grade ${siteId[0] == "1"? siteId.slice(0, 2) : siteId[0]}`;
-}
-
-// debug
-var test;
+siteId = url.length > 1 ? url[1] : "Error!"; //Error handling in async function changeStuff()
+    // Assume siteId is of form AaBB..., where Aa is a number from 7 to 12, BB... is the section
+var grade = `Grade ${siteId[0] == "1"? siteId.slice(0, 2) : siteId[0]}`;
+var section = siteId[0] == "1"? siteId.slice(2) : siteId.slice(1);
 
 // asynchronous function declaration, uses grads_section.json as info
 async function changeStuff(info) { // changes the html contents with student info
-    // Initially, check if the grade and section is available in the json
-    // Filters out any incorrect links
-    try{var students = info[grade][section]; students[0];}
+    // Initialize students with the necessary grade section, and
+    // Check if the json list is accessible
+    try{
+        var students = info[grade][section]; 
+        students[0];}
     catch(err){
-        console.log(err)
         // If fail, go to backup
         try{
             [section, grade] = loadBackup();
-            var students = info[grade][section]; test = info;
-            students[0];
+            var students = info[grade][section];
+            students[0]; //check if accessible
+            window.location.href = `grads_section.html#${grade.split(" ")[1]}${section}` // Send them to the backup page
         }
-        catch(err) { //If still fails, send user back
-            var prevPage = window.location.href;
-            window.history.back();
+        catch(err) { // If still fails, send user out of the page
+            var prevPage = window.location.href; // Initialize current href in caes going back does nothing
+            window.history.back(); // Send user back
             
-            //If somehow you can't send the user back, send them to The Graduates
+            // If somehow you can't send the user back, send them to The Graduates
             setTimeout(function(){ 
                 if (window.location.href == prevPage) {
                     window.location.href = "grads_by_section.html"; 
@@ -62,9 +58,12 @@ async function changeStuff(info) { // changes the html contents with student inf
             }, 500);
         }
     }
+
+    // Now that we have a valid grade section, set the backup
+    setBackup(section, grade)
     
-    // First, set the inner HTML of the section header. A bit messy but the image is 
-    // written in plain html here, right next to the actual section name
+    // First, set the inner HTML of the section header. 
+    // A bit messy but the image is written in plain html here within the header element
     document.getElementById("sectionName").innerHTML = 
         `<img class="sectionIcon" alt="${grade} ${section} Icon" ` +
         `src="../../resources/img/icons/${grade.replace(" ", "%20")}/${section}.png">` + 
@@ -77,9 +76,6 @@ async function changeStuff(info) { // changes the html contents with student inf
     // Thumbnail(one of the four pics) and Name of the students in the section 
     // since we only have their student ids
     let grads = await fetch("grads.json").then(f => f.text()).then(i => JSON.parse(i));
-
-    //debug
-    console.log(grads)
 
     // Start creating all the elements containing students
     let counter = 1;
@@ -109,7 +105,7 @@ async function changeStuff(info) { // changes the html contents with student inf
         studentsDiv.appendChild(aWrap);
         counter ++;
     })
-}
+}   
 
 // actual running code of that async function changeStuff()
 fetch("grads_section.json").then(f => f.text()).then(i => changeStuff(JSON.parse(i)));
