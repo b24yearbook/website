@@ -1,3 +1,5 @@
+//////// LOADER
+
 // page crash, send the user back or to grads_section.html
 function pageLoadFail() {
   var prevPage = window.location.href;
@@ -10,7 +12,6 @@ function pageLoadFail() {
         }
     }, 500);
 }
-
 // Function run if the stdId is invalid, checks for what the last valid url was
 // Technically the user could edit their localstorage... but like, why would they?
 // If ever that happens, see exception statements in function changeStuff
@@ -20,6 +21,8 @@ function loadBackup() {
 
 // Check if ID is valid
 function validateID(id) {
+  if(id==null) return false;
+
   for(let i = 3; i<9; i++) if (id[i] > 7) return false;
   if(parseInt(id.slice(9)) > 15) return false;
   return true;
@@ -52,10 +55,9 @@ const REF = {
 // Get student Id to show the user what they want
 var url = window.location.href.split("#")
 // Check if the url contains an identifier (#) or is 11 digits (AAA BCD EFG HH)
-var id = url.length == 1 || url[1].length != 11 ? -1 : url[1];
+var id = url.length == 1 || url[1].length != 11 ? null : url[1];
 if (id == -1) { // If the id fails the first try, check backup
   id = loadBackup();
-  console.log(validateID());
   if(! validateID(id)) {
     pageLoadFail();
   }
@@ -102,24 +104,34 @@ fetch("../grads/grads.json").then(f => f.text()).then(i => changeStuff(JSON.pars
 
 
 
-window.addEventListener('scroll', reveal);
 
+///// SCROLL CHANGE
 
-// What does this do. Please add a comment explaining this function here.
-// Girl weren't you the one who added this???
-function reveal() { 
+// Set scroll function to activate
+window.onscroll = function() {scrollFunction()};
 
-  var reveals = document.querySelectorAll('.hidden-content');
-  
-  for (var i = 0; i < reveals.length; i++) {
-    var windowheight = window.innerHeight;
-    var revealtop = reveals[i].getBoundingClientRect().top;
-    var revealpoint = 150;
-    
-    if (revealtop < windowheight - revealpoint) {
-      reveals[i].classList.add('active');
-    } else {
-      reveals[i].classList.remove('active');
-    }
+// Declare timer and time out for delayed display=none
+//timer = true ? "5s" : window.getComputedStyle(document.getElementById("arrowRight")).transitionDuration; 
+//timer = timer.slice(-2) == "ms" ? parseFloat(timer.slice(0, -2)) : parseFloat(timer.slice(0, -1))*1000;
+timer = 500
+timeout = setTimeout( function(){
+  console.log("Timed Out!")
+  document.getElementById("arrowLeft").style.display = "none";
+  document.getElementById("arrowRight").style.display = "none";}, timer)
+
+//don't run this
+clearTimeout(timeout);
+console.log(innerHeight)
+function scrollFunction() {
+  console.log(document.documentElement.scrollTop)
+  if (document.documentElement.scrollTop > innerHeight/3) {
+    document.getElementById("arrowLeft").className = "arrowLeft vanish";
+    document.getElementById("arrowRight").className = "arrowRight vanish";
+    timeout;
+  } else {
+    document.getElementById("arrowLeft").style.display = "";
+    document.getElementById("arrowRight").style.display = "";
+    document.getElementById("arrowLeft").className = "arrowLeft show";
+    document.getElementById("arrowRight").className= "arrowRight show";
   }
 }
