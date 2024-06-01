@@ -24,13 +24,16 @@
     --c-4:#E7C145;
     --c-5:#A8E540;
     --c-6:#A4F3E0;
+    /*Background colors*/
+    --c-bg1:#452057;
+    --c-bg2:#190C35;
 }
 
 /* -------------- GENERAL STYLES ---------------- */
 body {
-        margin:0;
-        font-size:20px;
-    background-image:linear-gradient(#452057 0%, #190C35 33%, #452057 66%, #190C35 100%);
+    margin:0;
+    font-size:20px;
+    background-image:linear-gradient(var(--c-bg1) 0%, var(--c-bg2) 33%, var(--c-bg1) 66%, var(--c-bg2) 100%);
     overflow-x:hidden;
 }
 .hidden {
@@ -188,15 +191,7 @@ h3.header-glow::after {
     transform:translatex(-150px);
     opacity:0;
     pointer-events:none;
-    background-image:linear-gradient(30deg,
-        var(--c-1) 15%, 
-        var(--c-2) 30%, 
-        var(--c-3) 45%, 
-        var(--c-4) 60%, 
-        var(--c-5) 75%, 
-        var(--c-6) 90%,
-        var(--c-1) 100%
-    );
+    background:black;
     background-size:300%;
     background-position:right;
     padding-bottom:10px;

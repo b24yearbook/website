@@ -3,11 +3,61 @@
 -------------------------------------------*/
 
 .mainSection {
-  padding-top:80px;
+  padding-top:0;
   display:flex;
   justify-content:center;
   padding-bottom:80px;
   position:relative;
+  flex-direction:column;
+}
+.brightSection, .personalInfoSection, .writeupSection {
+  height:95vh;
+  box-sizing:border-box;
+  padding:20px;
+}
+.brightSection {
+  padding-top:50px;
+  background-color:red;
+  background-image:linear-gradient(30deg,
+      var(--c-1) 15%, 
+      var(--c-2) 30%, 
+      var(--c-3) 45%, 
+      var(--c-4) 60%, 
+      var(--c-5) 75%, 
+      var(--c-6) 90%,
+      var(--c-1) 100%
+  );
+}
+.image1 {
+  background-image:url(temp/LANCE_TOGA.jpg);
+}
+.image2 {
+  background-image:url(temp/LANCE_BARONG.jpg);
+}
+.image3 {
+  background-image:url(temp/LANCE_SEMIFORMAL.jpg);
+}
+.image4 {
+  background-image:url(temp/LANCE_CREATIVE.jpg);
+}
+.images {
+  display:flex;
+  overflow-x:scroll;
+  overflow-y:hidden;
+}
+.images > div {
+  height:60vh;
+  aspect-ratio:6/8.5;
+  margin-left:auto;
+  margin-right:auto;
+  background-size:contain;
+  background-repeat:no-repeat;
+  background-position:center;
+}
+.brightSection h1 {
+  line-height:0.8em;
+  margin:10px 0;
+  color:black;
 }
 .starsBg {
   background-image:url(../../resources/img/stars.png);
@@ -75,8 +125,8 @@
 }
 .constellation {
   background-image:url(temp/CONSTELLATION_PLACEHOLDER.png), radial-gradient(circle, rgba(255,248,179,0.5) 0%, rgba(0,0,0,0) 70%);
-  width:200px;
-  height:200px;
+  width:30vw;
+  aspect-ratio:1/1;
   background-size:contain;
   position:relative;
   background-repeat:no-repeat;
