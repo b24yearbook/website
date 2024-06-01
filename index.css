@@ -3,7 +3,14 @@
 ---------------------------------*/
 
 body {
-    background-image: url("temp_assets/front_cover.png");
+    /*background-image: url("temp_assets/front_cover_alt.png");*/
+}
+
+#passwordBG {
+    position: fixed;
+    height: 110%;
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
 }
 
 .roundedRectangle {
@@ -24,7 +31,7 @@ body {
 
 #password {
     background: black;
-    width: 100%;
+    width: 80%;
     border: 0;
     border-radius: 14px;
     font-size: 16px;
@@ -36,11 +43,29 @@ body {
 }
 
 #submit {
+    font-family:"Montserrat", sans-serif;
     border-radius: 10px;
     background-color: #F9C95E;
     color:black;
+    margin-bottom: 30px;
 }
 
 #loginBox {
     text-align: center;
+}
+
+#YBPreface {
+    margin-top: 25px;
+    margin-bottom: -10px;
+    width: 300px;
+}
+
+@media screen and (max-width: 500px) {
+    .roundedRectangle {
+        width:75%;
+    }
+
+    #YBPreface {
+        width: 80%;
+    }
 }

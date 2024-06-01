@@ -6,35 +6,39 @@
 <html>
 <head>
     <title>Log In - Luminare</title>
-    <link rel="stylesheet" href="../../main.css">
-    <link rel="stylesheet" href="../../index.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>
         function login() {
             
             let password = document.getElementById("password").value;
 
             if (password == "password") {
-                window.open("../pages/homepage/homepage.html", "_self");
+                window.open("pages/homepage/homepage.html", "_self");
+            } else if (password == ""){
+                alert("Please enter a password.");
             } else {
-                alert("nah");
+                alert("Incorrect password. Please recheck what you typed and try again.");
             }
             
         }
     </script>
 </head>
 <body>
+    <!--
     <div class="navBar ver2">
         <div class="flex-spacer"></div>
     </div>
+    -->
+    <img src="temp_assets/front_cover_alt.png" id="passwordBG">
     <div class="roundedRectangle">
-        <div id="YBPreface">
-            <!-- insert yearbook logo and preface for visitors -->
-            <img src="temp_assets\yearbook.png"\ style="width:200px;height:200px">
-        </div>
+        <!-- insert yearbook logo and preface for visitors -->
+        <img src="temp_assets\yearbook.png" id="YBPreface">
         <div id="loginBox">
-            <h1 class="header-glow landingHeader">log in</h1><br>
+            <h1 class="header-glow landingHeader">Log In</h1><br>
             <input type="password" id="password"><br><br>
-            <button onclick="login()" id="submit">submit</button>
+            <button onclick="login()" id="submit">Submit</button>
         </div>
     </div>
 </body>
