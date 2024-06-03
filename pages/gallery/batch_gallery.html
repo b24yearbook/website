@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="batch_gallery.css">
     <script src="batch_gallery.js"></script>
 </head>
-<body onload="setup()">
+<body onload="setup(0)">
     <div class="navBar ver2">
         <a href="../homepage/homepage.html">
           <div class="logo">luminare</div>
@@ -36,8 +36,8 @@
             <p>of Batch 2024</p>
         </div>
 
-        <div class="arrowLeft"><p class="arrowChar"><</p></div>
-        <div class="arrowRight"><p class="arrowChar">></p></div>
+        <div class="arrowLeft" onclick="updatePage(-1)"><p class="arrowChar"><</p></div>
+        <div class="arrowRight" onclick="updatePage(1)"><p class="arrowChar">></p></div>
 
         <div class="year">
             <h2 class="header-glow">year</h2>

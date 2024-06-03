@@ -3,8 +3,9 @@
     <title>Batch Gallery - Luminare</title>
     <link rel="stylesheet" href="../../main.css">
     <link rel="stylesheet" href="batchg_pic.css">
+    <script src="batchg_pic.js"></script>
 </head>
-<body>
+<body onload="setup()">
     <div class="navBar ver2">
         <a href="../homepage/homepage.html">
           <div class="logo">luminare</div>
@@ -30,13 +31,13 @@
     </div>
 
     <div class="mainSection">
-        <div class="arrowLeft"><p class="arrowChar"><</p></div>
-        <div class="arrowRight"><p class="arrowChar">></p></div>
+        <div class="arrowLeft" onclick="updatePage(-1)"><p class="arrowChar"><</p></div>
+        <div class="arrowRight" onclick="updatePage(1)"><p class="arrowChar">></p></div>
 
         <h1 class="header-glow">The Pictures, Memories</h1>
         <p>(grade level taken)</p>
-        <img src="../../resources/img/PLACEHOLDER.png" alt="Batch Picture" class="picture">
-        <p>Event Name</p>
+        <img src="../../resources/img/PLACEHOLDER.png" alt="Batch Picture" id="picture">
+        <p><b><u>Event Name</u></b></p>
         <p>date taken location taken</p>
         <p>taken by photographer name</p>
     </div>
