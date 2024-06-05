@@ -1,7 +1,10 @@
 /*----------------------------------------- 
   FOCUSED STYLESHEET FOR indiv_spread.css
 -------------------------------------------*/
+/* -------------- IMPORTS ---------------- */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 
+/* -------------- GENERAL STYLES ---------------- */
 .mainSection {
   padding-top:0;
   display:flex;
@@ -89,6 +92,8 @@
   background-position:center;
   background-repeat:no-repeat;
   margin-bottom:20px;
+  font-family: "Great Vibes";
+  font-size: 10em;
   filter:invert(1) drop-shadow(0 0 5px white);
 }
 .personalInfoSection {
