@@ -11,9 +11,12 @@
   flex-direction:column;
 }
 .brightSection, .personalInfoSection, .writeupSection {
-  height:95vh;
+  height:96vh;
   box-sizing:border-box;
   padding:20px;
+}
+.writeupSection {
+  height:auto;
 }
 .brightSection {
   padding-top:50px;
@@ -27,6 +30,8 @@
       var(--c-6) 90%,
       var(--c-1) 100%
   );
+  display:flex;
+  flex-direction:column;
 }
 .image1 {
   background-image:url(temp/LANCE_TOGA.jpg);
@@ -44,6 +49,11 @@
   display:flex;
   overflow-x:scroll;
   overflow-y:hidden;
+  position:relative;
+  left:-20px;
+  width:calc(100% + 20px);
+  padding:0 20px;
+  /* mask-image:linear-gradient(0deg, transparent 2%, black 5%, black 95%, transparent 98%); */
 }
 .images > div {
   height:60vh;
@@ -54,10 +64,36 @@
   background-repeat:no-repeat;
   background-position:center;
 }
-.brightSection h1 {
+.brightSection h1, .brightSection p {
   line-height:0.8em;
   margin:10px 0;
   color:black;
+}
+.brightSection p {
+  margin:0;
+  font-weight:bold;
+}
+.name {
+  position: relative;
+  display:inline-block;
+}
+.stylizedName {
+  width:60%;
+  aspect-ratio:96/30;
+  background-image:url(./temp/LANCE_StylizedName.png);
+  background-size:contain;
+  background-position:center;
+  background-repeat:no-repeat;
+  margin-bottom:20px;
+  filter:invert(1) drop-shadow(0 0 5px white);
+}
+.personalInfoSection {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+.personalInfoSection h3 {
+  margin-bottom:5px;
 }
 .starsBg {
   background-image:url(../../resources/img/stars.png);
@@ -125,7 +161,8 @@
 }
 .constellation {
   background-image:url(temp/CONSTELLATION_PLACEHOLDER.png), radial-gradient(circle, rgba(255,248,179,0.5) 0%, rgba(0,0,0,0) 70%);
-  width:30vw;
+  width:25vw;
+  max-width:25vh;
   aspect-ratio:1/1;
   background-size:contain;
   position:relative;
@@ -140,14 +177,13 @@
   font-weight:bold;
 }
 .constellationSection {
-  flex-grow:1;
   display:flex;
   align-items:center;
   justify-content:center;
   margin-bottom:60px;
-  flex-wrap:wrap;
-  row-gap:30px;
-  column-gap:30px;
+  column-gap:2vw;
+  padding:0 20px;
+  box-sizing:border-box;
 }
 .pages {
   border:1px solid rgba(255,255,255,0.5);
@@ -164,6 +200,7 @@
   top:50%;
   user-select:none;
   transition:0.3s filter;
+  z-index:100;
   filter:drop-shadow(0 0 5px black) drop-shadow(0 0 5px black) drop-shadow(0 0 10px black);
 }
 .arrowLeft:hover, .arrowRight:hover {
@@ -171,6 +208,9 @@
 }
 .arrowChar, .arrowName {
   margin:0;
+}
+.arrowChar {
+  line-height:30px;
 }
 .arrowName {
   font-size:0.5em;
@@ -244,32 +284,34 @@
 .vanish {
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
+  pointer-events:none;
 }
 
 .show {
   opacity: 1;
   transition: opacity 0.5s ease-in-out;
+  pointer-events:all;
 }
 
 .sendTopButton .arrowChar {
   transform:rotate(90deg);
+  width:22px;
+  left:16px;
+  position:relative;
 }
 .sendTopButton {
   font-size:50px;
-  position: fixed;
+  position:fixed;
   z-index: 99;
-  bottom: 40px;
-  right: 40px;
+  left:50%;
+  bottom:10px;
+  transform:translatex(-50%);
   font-weight:bold;
   color:white;
-  transition:0.3s filter;
+  transition:1s filter, opacity 0.5s;
   filter:drop-shadow(0 0 5px black) drop-shadow(0 0 5px black) drop-shadow(0 0 10px black);
 }
-.sendTopButton:hover{
+.sendTopButton:active {
+  transition:0s filter, opacity 0.5s;
   filter:drop-shadow(0 0 5px white) drop-shadow(0 0 10px white) drop-shadow(0 0 20px white);
-}
-@media screen and (max-width: 700px) {
-  .sendTopButton {
-    padding: 50px;
-  }
 }

@@ -124,12 +124,15 @@ function scrollFunction() {
     HARight.className = "arrowRight vanish";
   } else {
     HALeft.className = "arrowLeft show";
-    HARight.className= "arrowRight show";
+    HARight.className = "arrowRight show";
   }
 
   // Go to Top button
   doHide = document.documentElement.scrollTop > document.documentElement.scrollHeight - GTTBSize ||
-           document.documentElement.scrollTop < innerHeight*1.2
-  if (doHide) {GTTButton.style.display = "none"}
-  else {GTTButton.style.display = ""}
+           document.documentElement.scrollTop < innerHeight*0.8
+  if (doHide) {
+    GTTButton.className = "sendTopButton vanish";
+  } else {
+    GTTButton.className = "sendTopButton show";
+  }
 }
