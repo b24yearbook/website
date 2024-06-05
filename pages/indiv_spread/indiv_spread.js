@@ -12,11 +12,13 @@ fetch(GRADSJSON).then(f => f.text()).then(i => changeStuff(JSON.parse(i)));
 // Loads in the data from grads.json 
 async function changeStuff(info) {
   // Check if id exists by finding the student connected to id
+  // I'm sorry for the spaghetti
   var student = info[id];
-  if(typeof(student) == "undefined") {id = loadBackup(); console.log(!validateID(id))}
+  if(typeof(student) == "undefined") id = loadBackup();
   if(!validateID(id) || typeof(info[id]) == "undefined") pageLoadFail();
   else window.location.replace(`indiv_spread.html#${id}`);
   student = info[id]
+  setBackup(id);
 
   // Get Silid
   document.querySelector(".silidName").innerHTML = `Silid ${student["Silid"]}`;
