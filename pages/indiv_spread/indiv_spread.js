@@ -13,9 +13,10 @@ fetch(GRADSJSON).then(f => f.text()).then(i => changeStuff(JSON.parse(i)));
 async function changeStuff(info) {
   // Check if id exists by finding the student connected to id
   var student = info[id];
-  if(typeof(student) == "undefined") student = info[loadBackup()];
-  if(typeof(student) == "undefined") pageLoadFail();
-  window.location.href = `indiv_spread.html#${id}`;
+  if(typeof(student) == "undefined") {id = loadBackup(); console.log(!validateID(id))}
+  if(!validateID(id) || typeof(info[id]) == "undefined") pageLoadFail();
+  else window.location.replace(`indiv_spread.html#${id}`);
+  student = info[id]
 
   // Get Silid
   document.querySelector(".silidName").innerHTML = `Silid ${student["Silid"]}`;
@@ -64,16 +65,9 @@ async function changeStuff(info) {
   
 }
 
-function pageLoadFail() { // If page fails to get data
-  var prevPage = window.location.href;
-  window.history.back();
-  
-  //If somehow you can't send the user back, send them to The Graduates
-  setTimeout(function(){ 
-      if (window.location.href == prevPage) {
-          window.location.href = "grads_section.html"; 
-      }
-  }, 500);
+function pageLoadFail() { // If page fails to get data, send to indiv 1
+  window.location.href = "indiv_spread.html#001";
+  window.location.reload();
 }
 
 function loadBackup() { // Loads the backup student id which is the last student
