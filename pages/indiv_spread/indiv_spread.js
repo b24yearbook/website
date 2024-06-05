@@ -48,15 +48,15 @@ async function changeStuff(info) {
   // Get Stylized Name (if picture) or if not, set to whatever text is there.
   fetch(encodeURI(student["Stylized Name"])).then(i=>{
     console.log(i.status);
-    if (i.status != "404") document.getElementById("stylizedName").innerHTML = `<img src="${encodeURI(student["Stylized Name"])}">`;
+    if (i.status != "404") document.getElementById("stylizedName").style.setProperty("--url",encodeURI(student["Stylized Name"]));
     else document.getElementById("stylizedName").innerHTML = student["Stylized Name"];
   });
 
   // Change the quote, ec's, writeups, etc.
   document.getElementById("quote").innerHTML = student["Quote"];
   document.getElementById("extracurriculars").innerHTML = student["Extracurriculars"];
-  document.querySelector("div.writeupSection > p.writeup").innerHTML = student["Writeups"][0];
-  document.querySelector("div.writeupSection > p.writerName").innerHTML = `- ${student["Writers"][0]}`;
+  document.querySelector("div.pageOne > p.writeup").innerHTML = student["Writeups"][0];
+  document.querySelector("div.pageOne > p.writerName").innerHTML = `- ${student["Writers"][0]}`;
   if(student["Writers"].length > 1){ //change writeup 2 or set this part to none if there's no second
     document.querySelector("div.pageTwo > p.writeup").innerHTML = student["Writeups"][1];
     document.querySelector("div.pageTwo > p.writerName").innerHTML = `- ${student["Writers"][1]}`;

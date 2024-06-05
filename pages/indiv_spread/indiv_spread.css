@@ -17,6 +17,10 @@
 }
 .writeupSection {
   height:auto;
+  margin:10px 20px;
+}
+.writeupSection * {
+  font-weight:bold;
 }
 .brightSection {
   padding-top:50px;
@@ -135,7 +139,6 @@
   color:var(--c-accent-f-1);
   font-weight:bold;
   font-style:italic;
-  text-align:right;
 }
 .quote {
   font-weight:bold;
@@ -144,20 +147,6 @@
 }
 .extracurriculars {
   font-weight:bold;
-}
-.pageOne {
-  display:flex;
-  width:70vw;
-  column-gap:40px;
-  flex-wrap:wrap;
-  justify-content:center;
-}
-.pageOne .left {
-  width:300px;
-}
-.pageOne .right {
-  flex-basis:0;
-  flex-grow:1;
 }
 .constellation {
   background-image:url(temp/CONSTELLATION_PLACEHOLDER.png), radial-gradient(circle, rgba(255,248,179,0.5) 0%, rgba(0,0,0,0) 70%);
@@ -222,10 +211,6 @@
 .arrowRight {
   right:10px;
   text-align:right;
-}
-.pageTwo {
-  max-width:900px;
-  margin-top:100px;
 }
 .imageSeriesContainer {
   display:flex;
