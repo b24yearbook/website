@@ -93,8 +93,8 @@ a {
                 -20px 10px 30px var(--c-accent-f-3),
                 10px -20px 30px var(--c-accent-f-4);
 }
-h3.header-glow::after {
-    /*content: 'TO OUR';*/
+.header-glow::after {
+    content: attr(text-content);
     position: absolute;
     top: 0;
     left: 0;
