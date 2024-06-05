@@ -6,24 +6,10 @@
 <html>
 <head>
     <title>Log In - Luminare</title>
+    <script src="index.js"></script>
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="index.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script>
-        function login() {
-            
-            let password = document.getElementById("password").value;
-
-            if (password == "password") {
-                window.open("pages/homepage/homepage.html", "_self");
-            } else if (password == ""){
-                alert("Please enter a password.");
-            } else {
-                alert("Incorrect password. Please recheck what you typed and try again.");
-            }
-            
-        }
-    </script>
 </head>
 <body>
     <!--
@@ -31,14 +17,16 @@
         <div class="flex-spacer"></div>
     </div>
     -->
-    <img src="temp_assets/front_cover_alt.png" id="passwordBG">
-    <div class="roundedRectangle">
+    <div class="bg"></div>
+    <div class="bg-blurred"></div>
+    <div class="container">
         <!-- insert yearbook logo and preface for visitors -->
-        <img src="temp_assets\yearbook.png" id="YBPreface">
+        <div class="logo"></div>
         <div id="loginBox">
-            <h1 class="header-glow landingHeader">Log In</h1><br>
+            <h2 class="header-glow">Log In</h2>
+            <p class="inputHeader">PASSWORD</p>
             <input type="password" id="password"><br><br>
-            <button onclick="login()" id="submit">Submit</button>
+            <button onclick="login()" class="submitButton">SUBMIT</button>
         </div>
     </div>
 </body>
