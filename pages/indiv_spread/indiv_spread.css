@@ -9,10 +9,6 @@
   padding-top:0;
   padding-bottom:80px;
   position:relative;
-  flex-direction:column;
-  display:flex;
-  justify-content:center;
-  align-items:center;
 }
 .brightSection, .personalInfoSection, .writeupSection {
   height:96vh;
