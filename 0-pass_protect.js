@@ -41,15 +41,18 @@ function edit(file) {
     file_type = file.split(".");
     file_type = file_type[file_type.length - 1];
 
+    async function (){
+        ; // encrypt is an async function
+    };
+
     console.log("Editing at " +protPath+file);
     fs.readFile("./"+file, (err, dec, _1) => {
     if (file_type == "json")
         fs.writeFile(protPath+file, statiCrypt.encrypt(dec, hashPass), err=>{});
-    else if (file_type == "html")
-        fetch(statiCrypt.encrypt(dec.toString().match('(?<=<body>)[\s\S]*(?=</body>)'), hashPass))
-        //fs.writeFile(
-        //    protPath+file,
-        //    , 
-        //    err=>{});
+    else if (file_type == "html") 
+        fs.writeFile(
+            protPath+file,
+            statiCrypt.encrypt(dec.toString().match('(?<=<body>)[\s\S]*(?=</body>)'), hashPass), 
+            err=>{});
     });
 }
