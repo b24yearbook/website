@@ -25,7 +25,7 @@
     --c-5:#A8E540;
     --c-6:#A4F3E0;
     /*Background colors*/
-    --c-bg1:#452057;
+    --c-bg1:#271450;
     --c-bg2:#190C35;
 }
 
@@ -33,7 +33,7 @@
 body {
     margin:0;
     font-size:20px;
-    background-image:linear-gradient(var(--c-bg1) 0%, var(--c-bg2) 33%, var(--c-bg1) 66%, var(--c-bg2) 100%);
+    background:linear-gradient(var(--c-bg1) 0%, var(--c-bg2) 33%, var(--c-bg1) 66%, var(--c-bg2) 100%), var(--c-bg2);
     overflow-x:hidden;
 }
 .hidden {
@@ -52,7 +52,7 @@ h2, h3, h4, h5, h6 {
     /*font-size:1.5em;*/
     color:var(--c-header);
 }
-p, button, span {
+p, button, span, image, div {
     font-family:"Avenir", "Sen", sans-serif;
     font-weight:400;
     font-size:1em;
@@ -126,7 +126,7 @@ a {
     margin-top:3px;
 }
 .navBar {
-    width:100%;
+    width:100vw;
     height:50px;
     position:fixed;
     top:0;
@@ -240,6 +240,68 @@ a {
     padding:50px 10%;
     box-sizing:border-box;
 }
+.topSection {
+    border-top:1px solid rgb(220,220,220);
+    width:100%;
+    min-height:50vh;
+    display:flex;
+    justify-content:flex-end;
+    align-items:flex-end;
+    flex-direction:column;
+    padding:20px 20px;
+    text-align:right;
+    box-sizing:border-box;
+    background-image:linear-gradient(30deg,
+        var(--c-1) 15%, 
+        var(--c-2) 30%, 
+        var(--c-3) 45%, 
+        var(--c-4) 60%, 
+        var(--c-5) 75%, 
+        var(--c-6) 90%,
+        var(--c-1) 100%
+    );
+    position:relative;
+    overflow:hidden;
+}
+.topSection .bgSlash {
+    width:200px;
+    height:100vh;
+    position:absolute;
+    right:0;
+    bottom:0;
+    background-color:var(--c-bg2);
+    border:1px solid white;
+    transform:rotate(45deg) translate(75%, 25%);
+    z-index:0;
+}
+.topSection * {
+    z-index:1;
+    color:white;
+    text-shadow:0.05em 0.07em 5px var(--c-bg2);
+}
+.starBorder-bottom, .starBorder-top {
+    background-image:url(./resources/img/starBorder.png);
+    width:100px;
+    height:200vh;
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position:center;
+    position:absolute;
+    filter:drop-shadow(0 0 5px var(--c-bg2));
+    bottom:-50px;
+}
+.starBorder-top {
+    left:-50px;
+}
+.starBorder-bottom {
+    right:-50px;
+}
+.topSection .header {
+    line-height:0.8em;
+}
+.topSection p {
+    margin:0;
+}
 .divLink:nth-child(odd) .section {
     align-items:flex-start;
 }
@@ -311,4 +373,8 @@ body .facultySection {
     background-color:white;
     box-shadow:0 10px 0 white,
                0 20px 0 white;
+}
+.debug-kill {
+    display:none !important;
+
 }

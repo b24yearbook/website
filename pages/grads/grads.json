@@ -7,7 +7,7 @@
         "Stylized Name": "/temp_assets/student1/student1StyledName.png",
         "Sections": ["Diamond", "Unknown", "Unknown", "Unknown", "Unknown", "Unknown"],
         "Toga Pic": "/temp_assets/student1/student_1_picture_2.png", 
-        "Sablay Pic": "/temp_assets/student1/student_1_picture_1.png",
+        "Sablay Pic": "https://res.cloudinary.com/drv3swjzo/image/upload/f_auto,q_auto/v1/Test%20Folder/BEREBER%2C%20Paris%20Miguel_YB%20Pictures/h0rruuqkxyycfnegyxyn",
         "Formal Pic": "/temp_assets/student1/student_1_picture_3.png",
         "Creative Pic": "/temp_assets/student1/student_1_picture_4.png",
         "Quote": "quote quote quote quote quote quote quote",
@@ -18,7 +18,7 @@
             "write write write write write write write write write write write write write"]
         },
     "002" : {
-        "Silid": "///",
+        "Silid": "A. Santos",
         "Name": "LIBATIQUE, Lance C.",
         "Stylized Name": "/pages/indiv_spread/temp/LANCE_StylizedName.png",
         "Sections": ["Opal", "Adelfa", "Sodium", "Tau", "H", "B"],

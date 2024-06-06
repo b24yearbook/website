@@ -23,10 +23,10 @@ async function changeStuff(info) {
   // Get Silid
   document.querySelector(".silidName").innerHTML = `Silid ${student["Silid"]}`;
   // Change pictures
-  document.getElementById("slide-1").style.backgroundImage = `url(${encodeURI(student["Sablay Pic"])})`;
-  document.getElementById("slide-2").style.backgroundImage = `url(${encodeURI(student["Creative Pic"])})`;
-  document.getElementById("slide-3").style.backgroundImage = `url(${encodeURI(student["Formal Pic"])})`;
-  document.getElementById("slide-4").style.backgroundImage = `url(${encodeURI(student["Toga Pic"])})`;
+  document.getElementById("slide-1").style.backgroundImage = `url(${student["Sablay Pic"]})`;
+  document.getElementById("slide-2").style.backgroundImage = `url(${student["Creative Pic"]})`;
+  document.getElementById("slide-3").style.backgroundImage = `url(${student["Formal Pic"]})`;
+  document.getElementById("slide-4").style.backgroundImage = `url(${student["Toga Pic"]})`;
 
   // Change Name
   document.getElementById("studentName").innerHTML = student["Name"];
@@ -44,19 +44,38 @@ async function changeStuff(info) {
   // Get Sections
   let gradeNo = 7;
   student["Sections"].forEach(section => {
-    link = document.createElement("a"); secImage = document.querySelector(`[alt="Grade ${gradeNo} Section"]`);
+    link = document.createElement("a"); 
+    link.classList.add("sectionIconLinkWrapper");
+    secImage = document.getElementById(`secImage${gradeNo}`);
     
     link.href = `../grads/grads_section.html#${gradeNo}${section}`
-    secImage.src = `../../resources/img/icons/Grade ${gradeNo}/${section}.png`;
+    secImage.style.setProperty("--img_url",`url('../../resources/img/icons/Grade ${gradeNo}/${section}.png')`);
 
     secImage.parentNode.insertBefore(link, secImage)
     link.appendChild(secImage)
     gradeNo++;
   })
 
+  // Update the constellations
+  let constellationNo = 1;
+  student["Constellations"].forEach((constellation)=>{
+    let nameElem = document.getElementById(`constellationName${constellationNo}`);
+    nameElem.innerHTML = student["Constellations"][constellationNo - 1];
+    let imgElem = document.getElementById(`constellation${constellationNo}`);
+    imgElem.style.setProperty("--img_url",`url('../../resources/img/constellations/${student["Constellations"][constellationNo - 1]}')`);
+
+    constellationNo++;
+  })
+  console.log(student);
+
   // Change the quote, ec's, writeups, etc.
   document.getElementById("quote").innerHTML = student["Quote"];
-  document.getElementById("extracurriculars").innerHTML = student["Extracurriculars"];
+  let extracurriculars = document.getElementById("extracurriculars");
+  student["Extracurriculars"].forEach((extracurricular)=>{
+    let extracurricularElem = document.createElement("p");
+    extracurricularElem.innerHTML = extracurricular;
+    extracurriculars.appendChild(extracurricularElem);
+  });
   document.querySelector("div.pageOne > p.writeup").innerHTML = student["Writeups"][0];
   document.querySelector("div.pageOne > p.writerName").innerHTML = `- ${student["Writers"][0]}`;
   if(student["Writers"].length > 1){ //change writeup 2 or set this part to none if there's no second
@@ -100,7 +119,7 @@ HARight = document.getElementById("arrowRight");
 GTTButton = document.querySelector(".sendTopButton")
 GTTButton.style.display="block";
 GTTBStyle = window.getComputedStyle(GTTButton)
-console.log(`HEIGHT ${GTTBStyle.height.replace(/[^\d.]/g,'')} BOTTOM ${GTTBStyle.bottom.replace(/[^\d.]/g,'')}`);
+// console.log(`HEIGHT ${GTTBStyle.height.replace(/[^\d.]/g,'')} BOTTOM ${GTTBStyle.bottom.replace(/[^\d.]/g,'')}`);
 GTTBSize = innerHeight + parseFloat(GTTBStyle.height.replace(/[^\d.]/g,'')) + parseFloat(GTTBStyle.bottom.replace(/[^\d.]/g,''));
 GTTButton.addEventListener("click", function(){document.documentElement.scrollTop = 0;});
 
