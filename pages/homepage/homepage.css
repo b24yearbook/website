@@ -21,7 +21,34 @@
     top:20%;
     left:30%;
 }
+.goAwayLeft{
+    opacity: 0;
+    filter:blur(5px);
+    transform: translateX(-100%);
+    transition: all 1s;
+}
+.goAwayRight{
+    opacity: 0;
+    filter:blur(5px);
+    transform: translateX(100%);
+    transition: all 1s;
+}
 
+.comeBack{
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
+.delayer:nth-child(1){
+    transition-delay: 200ms;
+}
+.delayer:nth-child(2){
+    transition-delay: 400ms;
+}
+.delayer:nth-child(3){
+    transition-delay: 600ms;
+}
 p {
     /*margin-top:30px;*/
     padding-top:30px;
