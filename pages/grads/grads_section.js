@@ -4,12 +4,6 @@ function lowerConnect(str, lower=true, joiner="") {
     else return str.replaceAll(/[,.-\s]/g, "");
 }
 
-// Function run when a student is clicked. Sets localstorage as backup
-function pageChange(stdNo) {
-    localStorage.setItem("stdNo", stdNo);
-    window.location.href = `../indiv_spread/indiv_spread.html#${stdNo}`;
-}
-
 // Functions related to backup data for clean user experience
 // If the website is accessed purely on links on it, unnecessary
 // But I'm a url inputter who types my urls so 🤷‍♀️ here we are

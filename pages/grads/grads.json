@@ -1,13 +1,15 @@
 {
     "Comment": "This document is similar to grads_section.html. However, this file contains student info like urls to the student ",
     "Comment2":"pictures, the writeups, quotes, etc.",
-    "00008881705" : {
+    "001" : {
+        "Silid": "Del Rosario",
         "Name": "BEREBER, Paris Miguel U.",
-        "Stylized Name": "../../temp_assets/student1/student1StyledName.png",
-        "Toga Pic": "../../temp_assets/student1/student_1_picture_2.png", 
-        "Sablay Pic": "../../temp_assets/student1/student_1_picture_1.png",
-        "Formal Pic": "../../temp_assets/student1/student_1_picture_3.png",
-        "Creative Pic": "../../temp_assets/student1/student_1_picture_4.png",
+        "Stylized Name": "/temp_assets/student1/student1StyledName.png",
+        "Sections": ["Diamond", "Unknown", "Unknown", "Unknown", "Unknown", "Unknown"],
+        "Toga Pic": "/temp_assets/student1/student_1_picture_2.png", 
+        "Sablay Pic": "https://res.cloudinary.com/drv3swjzo/image/upload/f_auto,q_auto/v1/Test%20Folder/BEREBER%2C%20Paris%20Miguel_YB%20Pictures/h0rruuqkxyycfnegyxyn",
+        "Formal Pic": "/temp_assets/student1/student_1_picture_3.png",
+        "Creative Pic": "/temp_assets/student1/student_1_picture_4.png",
         "Quote": "quote quote quote quote quote quote quote",
         "Extracurriculars": [],
         "Constellations": [],
@@ -15,28 +17,32 @@
         "Writeups": [
             "write write write write write write write write write write write write write"]
         },
-    "00100887016" : {
+    "002" : {
+        "Silid": "A. Santos",
         "Name": "LIBATIQUE, Lance C.",
-        "Stylized Name": "Lance",
-        "Toga Pic": "../indiv_spread/temp/LANCE_TOGA.jpg", 
-        "Sablay Pic": "../indiv_spread/temp/LANCE_BARONG.jpg",
-        "Formal Pic": "../indiv_spread/temp/LANCE_SEMIFORMAL.jpg",
-        "Creative Pig": "../indiv_spread/temp/LANCE_CREATIVE.jpg",
-        "Quote": "\"This quote is extremely cool. Woahhhh\" - Meee",
-        "Extracurriculars": ["Tulog Club Member", "Kain Club Secretary", "Cramming Club Vice President"],
-        "Constellations" : ["Corvus", "Butterflius", "Constellation"],
-        "Writers": ["Writer Name", "Writer Name"],
+        "Stylized Name": "/pages/indiv_spread/temp/LANCE_StylizedName.png",
+        "Sections": ["Opal", "Adelfa", "Sodium", "Tau", "H", "B"],
+        "Toga Pic": "/pages/indiv_spread/temp/LANCE_TOGA.jpg", 
+        "Sablay Pic": "/pages/indiv_spread/temp/LANCE_BARONG.jpg",
+        "Formal Pic": "/pages/indiv_spread/temp/LANCE_SEMIFORMAL.jpg",
+        "Creative Pic": "/pages/indiv_spread/temp/LANCE_CREATIVE.jpg",
+        "Quote": "\"I cannot remember every page I have read; even so, they have made me. Stomp a turty! Perchance.\" - inspired by Ralph Waldo Emerson and Jamesson",
+        "Extracurriculars": ["Asian English Olympics 2023 - Spelling (6th Place Semifinalist)", "Computron Treasurer 2022-2023", "Ephemera Lore Committee"],
+        "Constellations" : ["Corvus", "Eridanus", "Corona Australis"],
+        "Writers": ["Pineda et al.", "Kevin, Kimi, Lily, and Migs"],
         "Writeups": [
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n\nSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur.",
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n\nSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur."]
+            "We hope more people get to see everything that is truly good in Lance, not just the surface level things or the things he does for them. Although he’s a good friend—and that’s a part of who someone is—it’s not just the way he acts towards people that should be loved by those he cares for. He does his best for others, but he’s also passionate about his hobbies and puts effort into all the things he wants to do without letting academic or social pressures crush him—just because he's better at dealing with them than some people doesn’t mean it’s just as easy for him—and for that we’re happy for him. His growth these past few years was impressive, we don’t know anyone else who’s done that. He’s always been a good person, but he wasn’t always so honest to himself and we can’t explain how proud and thankful we are that he seems much happier and freer now without letting his drive for life and his passion projects go. We’re glad he got here. It’s always enough where he is, but we know he’ll want to keep walking forward.",
+            "Lance is a cool guy. He likes doing art, coding, and making all sorts of things, and oh boy, does that guy make! From several random projects to his child and baby video game, he makes a lot, including some cute crochets! But he also desires meaning in every little creation, all of them greatly thought-provoking. He has a vivid imagination which often makes his output unique and beautiful, and it is also why he ends up joining a lot of projects with his peers. His passion and dedication to the things he likes is not to be underestimated. Snagging a spot in the Director’s List twice in each quarter for the past 21 years and having won the Nobel Peace Prize in Computerography, he has truly worked hard for all the skills he has and it shines most evidently in everything he draws, types, and writes. His gamer brain is huge, and his joker spleen, which is very serious, is similarly swollen from the insane amounts of comedy fluid inside. He’s fun to hang out with and is usually down for some shenanigans, primarily because of his second spleen—his compassion and friendship spleen. He shall forever live on in our hearts—our dangerously enlarged hearts. Live, laugh, Libatique."]
         },
-    "00206221707" : {
+    "003" : {
+        "Silid": "Fronda",
         "Name": "ANORAN, Reuben Ryan, DV.",
         "Stylized Name": "Rye",
+        "Sections": ["Ruby", "Rosal", "Lithium", "Gluon", "B", "H"],
         "Toga Pic": "https://drive.google.com/thumbnail?sz=h1024&id=17G9i1nGWAgQbvyrsH9H7I0SXNkFPYGjd", 
         "Sablay Pic": "https://drive.google.com/thumbnail?sz=h1024&id=1iT9STB1wVXpI5MxJwlmnPoVWP6tYO8tQ",
         "Formal Pic": "https://drive.google.com/thumbnail?sz=h1024&id=1s0e-M382pEFJVFs_i65OzEmp6n33NaYs",
-        "Creative Pig": "https://drive.google.com/thumbnail?sz=h1024&id=10pTge5WvimK9cXdadGOldCD6jwHY2-I_",
+        "Creative Pic": "https://drive.google.com/thumbnail?sz=h1024&id=10pTge5WvimK9cXdadGOldCD6jwHY2-I_",
         "Quote": "\"They would rather be moved into a cursed, wrong, uncomfortable shape, than suffer the quiet violence of being untouched and abandoned\" - Vihart",
         "Extracurriculars": ["Canadian Computing Competition, 2023", "AstroSoc, 2021-2024", "Academic Committee, 2021-2023"],
         "Constellations" : ["Vulpecula", "Telescopium", "Norma"],

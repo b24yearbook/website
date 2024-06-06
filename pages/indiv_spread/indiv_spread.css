@@ -1,19 +1,33 @@
 /*----------------------------------------- 
   FOCUSED STYLESHEET FOR indiv_spread.css
 -------------------------------------------*/
+/* -------------- IMPORTS ---------------- */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 
+/* -------------- GENERAL STYLES ---------------- */
 .mainSection {
   padding-top:0;
-  display:flex;
-  justify-content:center;
   padding-bottom:80px;
-  position:relative;
-  flex-direction:column;
 }
-.brightSection, .personalInfoSection, .writeupSection {
-  height:95vh;
+.brightSection, .personalInfoSection {
+  min-height:96vh;
   box-sizing:border-box;
   padding:20px;
+  max-width:1000px;
+}
+.writeupSection {
+  height:auto;
+  margin:20px 20px;
+  box-sizing:border-box;
+  max-width:1000px;
+  backdrop-filter:blur(8px);
+  background-color:rgba(200, 90, 255, 0.1);
+  box-shadow:0 10px 10px rgb(0,0,0,0.5);
+  border-radius:5px;
+  padding:20px;
+}
+.writeupSection * {
+  font-weight:bold;
 }
 .brightSection {
   padding-top:50px;
@@ -27,6 +41,10 @@
       var(--c-6) 90%,
       var(--c-1) 100%
   );
+  box-shadow:0 0 10px var(--c-1),
+             0 0 3px var(--c-1);
+  display:flex;
+  flex-direction:column;
 }
 .image1 {
   background-image:url(temp/LANCE_TOGA.jpg);
@@ -44,6 +62,12 @@
   display:flex;
   overflow-x:scroll;
   overflow-y:hidden;
+  position:relative;
+  left:-20px;
+  width:calc(100%);
+  padding:0 20px;
+  margin-bottom:20px;
+  /* mask-image:linear-gradient(0deg, transparent 2%, black 5%, black 95%, transparent 98%); */
 }
 .images > div {
   height:60vh;
@@ -54,10 +78,39 @@
   background-repeat:no-repeat;
   background-position:center;
 }
-.brightSection h1 {
+.brightSection h1, .brightSection p {
   line-height:0.8em;
   margin:10px 0;
   color:black;
+}
+.brightSection p {
+  margin:0;
+  font-weight:bold;
+}
+.name {
+  position: relative;
+  display:inline-block;
+}
+.stylizedName {
+  width:100%;
+  min-height:10vh;
+  aspect-ratio:96/30;
+  background-image:url(./temp/LANCE_StylizedName.png);
+  background-size:contain;
+  background-position:center;
+  background-repeat:no-repeat;
+  margin-bottom:20px;
+  font-family: "Great Vibes";
+  font-size: 10em;
+  filter:invert(1) drop-shadow(0 0 5px white);
+}
+.personalInfoSection {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+.personalInfoSection h3 {
+  margin-bottom:5px;
 }
 .starsBg {
   background-image:url(../../resources/img/stars.png);
@@ -99,33 +152,45 @@
   color:var(--c-accent-f-1);
   font-weight:bold;
   font-style:italic;
-  text-align:right;
 }
 .quote {
   font-weight:bold;
   font-style:italic;
   color:var(--c-accent-f-1);
+  background-image:linear-gradient(30deg,
+      var(--c-1) 15%, 
+      var(--c-2) 30%, 
+      var(--c-3) 45%, 
+      var(--c-4) 60%, 
+      var(--c-5) 75%, 
+      var(--c-6) 90%,
+      var(--c-1) 100%
+  );
+  box-shadow:0 0 10px var(--c-1),
+             0 0 3px var(--c-1);
+  color:black;
+  padding:20px;
+  margin-left:-20px;
+  margin-right:-20px;
 }
 .extracurriculars {
+  backdrop-filter:blur(8px);
+  background-color:rgba(200, 90, 255, 0.1);
+  box-shadow:0 10px 10px rgb(0,0,0,0.5);
+  border-radius:5px;
+  padding:20px 20px;
+}
+.extracurriculars * {
   font-weight:bold;
-}
-.pageOne {
-  display:flex;
-  width:70vw;
-  column-gap:40px;
-  flex-wrap:wrap;
-  justify-content:center;
-}
-.pageOne .left {
-  width:300px;
-}
-.pageOne .right {
-  flex-basis:0;
-  flex-grow:1;
+  margin:10px 0;
+  border-bottom:2px solid var(--c-accent1);
+  text-align:center;
 }
 .constellation {
-  background-image:url(temp/CONSTELLATION_PLACEHOLDER.png), radial-gradient(circle, rgba(255,248,179,0.5) 0%, rgba(0,0,0,0) 70%);
-  width:30vw;
+  --img_url:url(temp/CONSTELLATION_PLACEHOLDER.png);
+  background-image:var(--img_url), radial-gradient(circle, rgba(255,248,179,0.5) 0%, rgba(0,0,0,0) 70%);
+  width:25vw;
+  max-width:25vh;
   aspect-ratio:1/1;
   background-size:contain;
   position:relative;
@@ -138,16 +203,16 @@
   left:50%;
   transform:translatex(-50%);
   font-weight:bold;
+  text-align:center;
 }
 .constellationSection {
-  flex-grow:1;
   display:flex;
   align-items:center;
   justify-content:center;
   margin-bottom:60px;
-  flex-wrap:wrap;
-  row-gap:30px;
-  column-gap:30px;
+  column-gap:2vw;
+  padding:0 20px;
+  box-sizing:border-box;
 }
 .pages {
   border:1px solid rgba(255,255,255,0.5);
@@ -164,6 +229,7 @@
   top:50%;
   user-select:none;
   transition:0.3s filter;
+  z-index:100;
   filter:drop-shadow(0 0 5px black) drop-shadow(0 0 5px black) drop-shadow(0 0 10px black);
 }
 .arrowLeft:hover, .arrowRight:hover {
@@ -171,6 +237,9 @@
 }
 .arrowChar, .arrowName {
   margin:0;
+}
+.arrowChar {
+  line-height:30px;
 }
 .arrowName {
   font-size:0.5em;
@@ -182,10 +251,6 @@
 .arrowRight {
   right:10px;
   text-align:right;
-}
-.pageTwo {
-  max-width:900px;
-  margin-top:100px;
 }
 .imageSeriesContainer {
   display:flex;
@@ -244,32 +309,52 @@
 .vanish {
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
+  pointer-events:none;
 }
 
 .show {
   opacity: 1;
   transition: opacity 0.5s ease-in-out;
+  pointer-events:all;
 }
 
 .sendTopButton .arrowChar {
   transform:rotate(90deg);
+  width:22px;
+  left:16px;
+  position:relative;
 }
 .sendTopButton {
   font-size:50px;
-  position: fixed;
+  position:fixed;
   z-index: 99;
-  bottom: 40px;
-  right: 40px;
+  left:50%;
+  bottom:10px;
+  transform:translatex(-50%);
   font-weight:bold;
   color:white;
-  transition:0.3s filter;
+  transition:1s filter, opacity 0.5s;
   filter:drop-shadow(0 0 5px black) drop-shadow(0 0 5px black) drop-shadow(0 0 10px black);
 }
-.sendTopButton:hover{
+.sendTopButton:active {
+  transition:0s filter, opacity 0.5s;
   filter:drop-shadow(0 0 5px white) drop-shadow(0 0 10px white) drop-shadow(0 0 20px white);
 }
-@media screen and (max-width: 700px) {
-  .sendTopButton {
-    padding: 50px;
-  }
+.gradeSections {
+  filter:drop-shadow(0 0 10px black);
+  display:flex;
+  margin-top:20px;
+}
+.sectionIcon {
+  background-image:var(--img_url);
+  width:100%;
+  height:100%;
+  background-size:cover;
+  background-repeat:none;
+  background-position:center;
+}
+.sectionIconLinkWrapper {
+  width:100%;
+  max-width:100px;
+  aspect-ratio:1/1;
 }

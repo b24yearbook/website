@@ -1,9 +1,21 @@
 .bySectionSection{
-    margin-left:30px;
+}
+.gradeLevel {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    align-items: center;
+}
+.gradeLevel:nth-child(even) {
+    float: right;
 }
 .sectionsCont {
     display: flex;
+    width: 50vw;
+    flex-wrap: wrap;
+    justify-content:center;
 }
+
 .sectionCont {
     width: 128px;
 }
