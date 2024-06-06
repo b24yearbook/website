@@ -1,6 +1,6 @@
-const exports = {};
-
 //////// https://github.com/robinmoisson/staticrypt/blob/main/lib/codec.js
+console.log("exported staticrypt.js")
+
 async function decode(signedMsg, hashedPassword, salt, backwardCompatibleAttempt = 0, originalPassword = "") {
     const encryptedHMAC = signedMsg.substring(0, 64);
     const encryptedMsg = signedMsg.substring(64);
@@ -291,7 +291,3 @@ function generateRandomString(length) {
     return randomString;
 }
 exports.generateRandomString = generateRandomString;
-
-export function statiCrypt() {
-    return exports;
-}
