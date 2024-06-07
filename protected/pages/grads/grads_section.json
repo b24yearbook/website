@@ -1,0 +1,23 @@
+{
+    "Comment1" : "This file is made using a python file that reads through the student information csv file." ,
+    "Comment2" : "Pretty dirty way of doing it but 🤷‍♀️. Note that this only contains student ids! See 'note for grads.json.txt' ",
+    "Comment3" : "for more information on student ids (Delete these comments during final",
+    "Grade 7" : {
+        "Diamond" : [
+            "001", "002", "003", "Placeholder", "Placeholder", 
+            "Placeholder", "Placeholder", "Placeholder", "Placeholder", "Placeholder", 
+            "Placeholder", "Placeholder", "Placeholder", "Placeholder", "Placeholder", 
+            "Placeholder", "Placeholder", "Placeholder", "Placeholder", "Placeholder", 
+            "Placeholder", "Placeholder", "Placeholder", "Placeholder", "Placeholder", 
+            "Placeholder", "Placeholder", "Placeholder", "Placeholder", "Placeholder"
+        ],
+        "Emerald" : [
+            "Placeholder", "Placeholder", "Placeholder", "Placeholder", "Placeholder", 
+            "Placeholder", "Placeholder", "Placeholder", "Placeholder", "Placeholder", 
+            "Placeholder", "Placeholder", "Placeholder", "Placeholder", "Placeholder", 
+            "Placeholder", "Placeholder", "Placeholder", "Placeholder", "Placeholder", 
+            "Placeholder", "Placeholder", "Placeholder", "Placeholder", "Placeholder", 
+            "Placeholder", "Placeholder", "Placeholder", "Placeholder", "Placeholder"
+        ]
+    }
+}

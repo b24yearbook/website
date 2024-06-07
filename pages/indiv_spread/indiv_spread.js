@@ -7,10 +7,14 @@ var url = window.location.href.split("#")
 var id = url[1]; 
 
 // Get data and do stuff with it
-fetch(GRADSJSON).then(f => f.text()).then(i => changeStuff(JSON.parse(i)));
+fetch(GRADSJSON).then(
+f => f.text()).then(
+enc => decryption(enc)).then(
+  i => changeStuff(JSON.parse(i)),
+  err => {failDec()}); 
 
 // Loads in the data from grads.json 
-async function changeStuff(info) {
+function changeStuff(info) {
   // Check if id exists by finding the student connected to id
   // I'm sorry for the spaghetti
   var student = info[id];
@@ -82,7 +86,7 @@ async function changeStuff(info) {
     document.querySelector("div.pageTwo > p.writeup").innerHTML = student["Writeups"][1];
     document.querySelector("div.pageTwo > p.writerName").innerHTML = `- ${student["Writers"][1]}`;
   }
-  else {document.querySelector("div.pageTwo").innerHTML = "";}
+  else {document.querySelector("div.pageTwo").remove();}
   
 }
 

@@ -1,14 +1,20 @@
+const DEBUG = true;
+
 statiCrypt = document.createElement("script");
-statiCrypt.href = "/scripts/staticrypt.js" 
+statiCrypt.src = "/scripts/staticrypt.js" 
 document.head.appendChild(statiCrypt);
 const SALT = "7e7610a1628c19f6d53bfbaee6f92f59"
 
 pass = localStorage.password;
 
-export async function decryption(content) {
-    result = exports.decode(content, pass, SALT)
-    if (!result.success) window.location.replace('/');
-    else {
-        return result.decoded;
-    }
+async function decryption(content) {
+    if (DEBUG) return content;
+
+    result = decode(content, pass, SALT)
+    if (result.success) return result.decoded;
+    else throw new Error("Incorrect Password...");
+}
+function failDec() {
+    alert("Please Login to Access!")
+    window.location.replace('/');
 }

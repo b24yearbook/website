@@ -1,3 +1,8 @@
+statiCrypt = document.createElement("script");
+statiCrypt.src = "/scripts/decryptJSON.js" 
+document.head.appendChild(statiCrypt);
+GRADSJSON = "../grads/grads.json"
+
 silids = [
     "A. Santos",
     "Alcala",
@@ -18,7 +23,11 @@ silids = [
 ]
 
 async function setup() {
-    let messages = await fetch("messages.json").then(f => f.text()).then(i => JSON.parse(i));
+    let messages = await fetch("messages.json").then(
+                        f => f.text()).then(
+                        enc => decryption(enc)).then(
+                            i => JSON.parse(i),
+                            err => {failDec()});
 
     silids.forEach(s => {
         let g = document.getElementById("silids");

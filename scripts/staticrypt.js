@@ -1,5 +1,24 @@
-//////// https://github.com/robinmoisson/staticrypt/blob/main/lib/codec.js
 console.log("exported staticrypt.js")
+
+try{module.exports = {};
+exports = module.exports;}
+catch (err) {console.log(err);
+exports = {};
+}
+
+//////// https://github.com/robinmoisson/staticrypt/blob/main/lib/codec.js
+async function encode(msg, password, salt) {
+    const hashedPassword = await hashPassword(password, salt);
+
+    const encrypted = await encrypt(msg, hashedPassword);
+
+    // we use the hashed password in the HMAC because this is effectively what will be used a password (so we can store
+    // it in localStorage safely, we don't use the clear text password)
+    const hmac = await signMessage(hashedPassword, encrypted);
+
+    return hmac + encrypted;
+}
+exports.encode = encode;
 
 async function decode(signedMsg, hashedPassword, salt, backwardCompatibleAttempt = 0, originalPassword = "") {
     const encryptedHMAC = signedMsg.substring(0, 64);
@@ -11,13 +30,13 @@ async function decode(signedMsg, hashedPassword, salt, backwardCompatibleAttempt
         // remember-me/autodecrypt links we need to try bringing the old hashes up to speed.
         originalPassword = originalPassword || hashedPassword;
         if (backwardCompatibleAttempt === 0) {
-            const updatedHashedPassword = await cryptoEngine.hashThirdRound(originalPassword, salt);
+            const updatedHashedPassword = await hashThirdRound(originalPassword, salt);
 
             return decode(signedMsg, updatedHashedPassword, salt, backwardCompatibleAttempt + 1, originalPassword);
         }
         if (backwardCompatibleAttempt === 1) {
-            let updatedHashedPassword = await cryptoEngine.hashSecondRound(originalPassword, salt);
-            updatedHashedPassword = await cryptoEngine.hashThirdRound(updatedHashedPassword, salt);
+            let updatedHashedPassword = await hashSecondRound(originalPassword, salt);
+            updatedHashedPassword = await hashThirdRound(updatedHashedPassword, salt);
 
             return decode(signedMsg, updatedHashedPassword, salt, backwardCompatibleAttempt + 1, originalPassword);
         }
@@ -32,7 +51,7 @@ async function decode(signedMsg, hashedPassword, salt, backwardCompatibleAttempt
 }
 exports.decode = decode;
 
-////// https://github.com/robinmoisson/staticrypt/blob/main/lib/cryptoEngine.js
+////// https://github.com/robinmoisson/staticrypt/blob/main/lib/js
 
 const crypto = typeof window === "undefined" ? require("node:crypto").webcrypto : window.crypto;
 const { subtle } = crypto;
