@@ -12,7 +12,7 @@ async function decryption(content) {
 
     result = decode(content, pass, SALT)
     if (result.success) return result.decoded;
-    else throw new Error("Incorrect Password...");
+    else {console.log(content, pass, salt);throw new Error("Incorrect Password...");}
 }
 function failDec() {
     alert("Please Login to Access!")
