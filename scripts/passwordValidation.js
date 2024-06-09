@@ -6,11 +6,11 @@ if (localStorage.getItem("passkey") == null) {
     window.location.replace('/');
 }
 
-let hashPass = localStorage.getItem("passkey")
-hashPass.then(p => {hashPass = p; return decode(testCase, p, SALT);}).then(
+var hashPass = localStorage.getItem("passkey")
+decode(testCase, hashPass, SALT).then(
 result => {
 
-if (result.success) {
-    localStorage.setItem("passkey", hashPass);
-    window.open("pages/homepage/homepage.html", "_self");
+if (!result.success) {
+    alert("Please Login to Access!")
+    window.location.replace('/');
 }});

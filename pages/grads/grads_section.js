@@ -73,8 +73,7 @@ async function changeStuff(info) { // changes the html contents with student inf
                 }
             }, 500);
         }
-    }
-    }
+    }}}
 
     // Now that we have a valid grade section, set the backup
     if (isSection) setBackup(section, grade);
@@ -132,6 +131,6 @@ async function changeStuff(info) { // changes the html contents with student inf
 
 fetch("grads_section.json").then(
     f => f.text()).then(
-    enc => decryption(enc)).then(
+    enc => {console.log(decryption(enc));return decryption(enc);}).then(
       i => changeStuff(JSON.parse(i)),
       err => {failDec()}); 
