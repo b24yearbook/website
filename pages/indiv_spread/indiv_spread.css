@@ -31,7 +31,7 @@
 }
 .brightSection {
   padding-top:50px;
-  background-color:red;
+  /* background-color:red;
   background-image:linear-gradient(30deg,
       var(--c-1) 15%, 
       var(--c-2) 30%, 
@@ -40,7 +40,9 @@
       var(--c-5) 75%, 
       var(--c-6) 90%,
       var(--c-1) 100%
-  );
+  ); */
+  background: rgb(33,17,63);
+  background: linear-gradient(180deg, rgba(33,17,63,1) 0%, rgba(79,6,191,1) 14%, rgba(255,183,85,1) 48%, rgba(255,151,109,1) 75%, rgba(33,17,63,1) 100%);
   box-shadow:0 0 10px var(--c-1),
              0 0 3px var(--c-1);
   display:flex;
@@ -90,6 +92,10 @@
 .name {
   position: relative;
   display:inline-block;
+}
+.studentName {
+  width: 100%;
+  font-size: 2em;
 }
 .stylizedName {
   width:100%;
