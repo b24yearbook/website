@@ -11,7 +11,8 @@ var statiCrypt = require('./scripts/staticrypt.js');
 const editList = [
     "pages/grads/grads.json",
     "pages/grads/grads_section.json",
-    "pages/grads/messages.json"
+    "pages/grads/messages.json",
+    "pages/indiv_spread/grads_nn.json"
 ];
 
 fs.rmSync("./protected", { recursive: true, force: true });
