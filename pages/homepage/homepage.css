@@ -49,6 +49,9 @@
 .delayer:nth-child(3){
     transition-delay: 600ms;
 }
+.divLink {
+    margin: 0px;
+}
 p {
     /*margin-top:30px;*/
     padding-top:30px;
